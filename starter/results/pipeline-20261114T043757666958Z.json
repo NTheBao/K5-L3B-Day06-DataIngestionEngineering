@@ -1,0 +1,166 @@
+{
+  "run_id": "20261114T043757666958Z",
+  "completed_at_utc": "2026-11-14T04:37:57.666958+00:00",
+  "source": {
+    "document_id": "agribank_zalopay_guide",
+    "path": "data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "sha256": "d9dedb661d5d0ca76153b02d9eae16498ff7d12230c0ed68b50415b2148b2e90",
+    "physical_pages": 62,
+    "content_pages": 60,
+    "source_characters": 10794,
+    "ocr_used": false
+  },
+  "normalization": "Unicode NFKC; whitespace normalized while line and blank-line structure is retained.",
+  "metadata": {
+    "required_fields": [
+      "document_id",
+      "source",
+      "page"
+    ],
+    "filter_field": "section",
+    "section_values_detected": {
+      "1. Đăng ký/Đăng nhập": 10,
+      "2. Xác thực tài khoản": 6,
+      "3. Liên kết với Agribank": 10,
+      "4. Huỷ liên kết ngân hàng": 4,
+      "5. Nạp tiền vào ví ZaloPay": 7,
+      "6. Rút tiền về Agribank": 6,
+      "7. Thanh toán qua ví ZaloPay": 17
+    },
+    "filter_values_in_benchmark": [
+      "2. Xác thực tài khoản",
+      "3. Liên kết với Agribank",
+      "5. Nạp tiền vào ví ZaloPay",
+      "6. Rút tiền về Agribank",
+      "7. Thanh toán qua ví ZaloPay"
+    ],
+    "section_value_source": "Section headings extracted from this PDF."
+  },
+  "benchmark": {
+    "path": "data/benchmark.json",
+    "sha256": "8dbb0111fdde5ec63df10166220295294c2e94d39c0e546e6e51b604729426e2",
+    "question_counts": {
+      "dev": 15,
+      "test": 5
+    },
+    "filtered_question_count": 7,
+    "question_ids_by_split": {
+      "dev": [
+        "D01",
+        "D02",
+        "D03",
+        "D04",
+        "D05",
+        "D06",
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11",
+        "D12",
+        "D13",
+        "D14",
+        "D15"
+      ],
+      "test": [
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    }
+  },
+  "embedding": {
+    "provider": "Sentence Transformers (local)",
+    "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "package_version": "6.3.0",
+    "dimensions": 384,
+    "device": "cpu",
+    "normalize_embeddings": true,
+    "initialization_seconds": 4.0
+  },
+  "vector_store": {
+    "provider": "Chroma",
+    "version": "1.5.9",
+    "path": "data\\chroma",
+    "collection": "day06_local_embeddings",
+    "metric": "cosine",
+    "search": "Approximate nearest-neighbor using Chroma HNSW."
+  },
+  "strategies": {
+    "A": {
+      "chunk_count": 61,
+      "chunk_characters_with_overlap": 10844,
+      "chunk_tokens_with_overlap": 3158,
+      "token_count_definition": "SentenceTransformer attention-mask token count, including special tokens.",
+      "chunk_length_chars": {
+        "min": 62,
+        "mean": 177.77,
+        "max": 500
+      },
+      "index_strategy": "A",
+      "existing_strategy_chunks_before": 0,
+      "indexed_strategy_chunks_after": 61,
+      "reingestion_has_no_duplicates": true,
+      "embedding_seconds": 2.3845,
+      "storage_seconds": 0.1506,
+      "cost_usd": 0.0,
+      "chunking": "fixed_size",
+      "chunk_size_chars": 500,
+      "overlap_chars": 50,
+      "chunking_seconds": 0.0005
+    },
+    "B": {
+      "chunk_count": 66,
+      "chunk_characters_with_overlap": 10788,
+      "chunk_tokens_with_overlap": 3168,
+      "token_count_definition": "SentenceTransformer attention-mask token count, including special tokens.",
+      "chunk_length_chars": {
+        "min": 20,
+        "mean": 163.45,
+        "max": 289
+      },
+      "index_strategy": "B",
+      "existing_strategy_chunks_before": 0,
+      "indexed_strategy_chunks_after": 66,
+      "reingestion_has_no_duplicates": true,
+      "embedding_seconds": 1.8154,
+      "storage_seconds": 0.0808,
+      "cost_usd": 0.0,
+      "chunking": "logical_paragraph_and_step_blocks",
+      "max_chunk_size_chars": 300,
+      "chunking_seconds": 0.0009
+    },
+    "C": {
+      "chunk_count": 66,
+      "chunk_characters_with_overlap": 10788,
+      "chunk_tokens_with_overlap": 3168,
+      "token_count_definition": "SentenceTransformer attention-mask token count, including special tokens.",
+      "chunk_length_chars": {
+        "min": 20,
+        "mean": 163.45,
+        "max": 289
+      },
+      "chunking": "logical_paragraph_and_step_blocks",
+      "max_chunk_size_chars": 300,
+      "chunking_seconds": 0.0009,
+      "index_strategy": "B (shared; identical chunks and vectors)",
+      "shares_index_with": "B",
+      "filter": "Apply the user's supplied section filter before retrieval; otherwise unfiltered.",
+      "additional_embedding_seconds": 0.0,
+      "additional_storage_seconds": 0.0,
+      "cost_usd": 0.0
+    }
+  },
+  "chunking_seconds_total": 0.0013,
+  "page_diagnostics": {
+    "pages_without_text": [],
+    "text_pages_without_detected_section": [
+      1,
+      2
+    ]
+  },
+  "total_run_seconds": 9.328,
+  "cost_usd": 0.0
+}
