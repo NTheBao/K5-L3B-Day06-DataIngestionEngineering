@@ -1,16 +1,14 @@
-# Starter · PostgreSQL + pgvector
+# Starter · Chroma
 
-Bộ khởi động **tùy chọn** cho lab cá nhân. Docker Compose tạo PostgreSQL + pgvector local; các file trong `src/` là **khung pseudocode có TODO**, chưa đọc tài liệu, tạo embedding, lưu vector hay chạy benchmark. Bạn cần tự hiện thực. Vẫn có thể chọn Qdrant, Chroma hoặc vector store tương đương theo [GUIDE.md](../GUIDE.md).
+Bộ khởi động **tùy chọn** cho lab cá nhân. Chroma lưu dữ liệu bền vững trên máy local; các file trong `src/` là **khung pseudocode có TODO**, chưa đọc tài liệu, tạo embedding, lưu vector hay chạy benchmark. Bạn cần tự hiện thực. Vẫn có thể chọn Qdrant hoặc vector store tương đương theo [GUIDE.md](../GUIDE.md).
 
 ## Cấu trúc
 
 ```text
 starter/
-├── docker-compose.yml     # PostgreSQL 16 + pgvector, chỉ mở cổng local
-├── init.sql               # bật extension khi tạo database mới
-├── requirements.txt       # psycopg, pypdf và python-dotenv
+├── requirements.txt       # ChromaDB, pypdf và python-dotenv
 ├── .env.example           # cấu hình mẫu; copy thành .env
-├── scripts/check_setup.py # kiểm tra kết nối và extension (đã chạy được)
+├── scripts/check_setup.py # kiểm tra Chroma persistent client (đã chạy được)
 ├── src/
 │   ├── models.py          # cấu trúc dữ liệu mẫu
 │   ├── ingestion.py       # TODO: đọc / chuẩn hóa tài liệu
@@ -25,7 +23,7 @@ starter/
 
 ## 1. Cài và kiểm tra database
 
-Cần Docker Desktop hoặc Docker Engine + Compose, Python **3.11–3.14**, và mạng để tải image/dependencies lần đầu. Các lệnh sau chạy từ thư mục `starter/`:
+Cần Python **3.11–3.14** và mạng để tải dependencies lần đầu. Các lệnh sau chạy từ thư mục `starter/`:
 
 ```bash
 cd starter
@@ -38,21 +36,14 @@ Kích hoạt `.venv`: macOS/Linux dùng `source .venv/bin/activate`; Windows Pow
 python -m pip install -r requirements.txt
 # macOS/Linux: cp .env.example .env
 # Windows PowerShell: Copy-Item .env.example .env
-docker compose -p day6_student_starter up -d --wait
 python scripts/check_setup.py
 ```
 
-Kỳ vọng: hiện tên database, phiên bản PostgreSQL và pgvector, sau đó `Setup OK`. Đây **chỉ là kiểm tra hạ tầng**, không phải kết quả benchmark. Docker dùng cổng `127.0.0.1:55433` và mật khẩu cố định **chỉ dùng local cho lab**; nếu cổng bận, sửa đồng thời port trong `docker-compose.yml` và `DATABASE_URL` trong `.env`. `init.sql` chỉ chạy khi volume mới được tạo; nếu database sẵn có chưa bật extension, xem log Docker và kiểm tra cấu hình thay vì xóa volume chứa dữ liệu.
-
-Dừng container nhưng giữ dữ liệu:
-
-```bash
-docker compose -p day6_student_starter stop
-```
+Kỳ vọng: hiện phiên bản ChromaDB, đường dẫn lưu local và `Setup OK`. Đây **chỉ là kiểm tra setup**, không phải kết quả benchmark. `CHROMA_PATH` mặc định là `data/chroma` trong thư mục `starter/`; thư mục này chứa database bền vững của bạn. Không xóa nó nếu cần giữ dữ liệu.
 
 ## 2. Chọn embedding model
 
-Điền key tương ứng trong `.env` nếu dùng OpenRouter, OpenAI hoặc Gemini; **không commit `.env`**. Model local không cần API key. `requirements.txt` chỉ có dependencies cơ bản: tự cài SDK hoặc thư viện local phù hợp với model bạn chọn và ghi lại version/lệnh cài trong báo cáo. Ghi tên model và số chiều; dùng cùng model cho toàn bộ chiến lược và vector query tương thích vector document.
+Điền key tương ứng trong `.env` nếu dùng OpenRouter, OpenAI hoặc Gemini; **không commit `.env`**. Model local không cần API key. `requirements.txt` chỉ có ChromaDB và dependencies đọc PDF/cấu hình: tự cài SDK hoặc thư viện local phù hợp với model bạn chọn và ghi lại version/lệnh cài trong báo cáo. Ghi tên model và số chiều; dùng cùng model cho toàn bộ chiến lược và vector query tương thích vector document.
 
 ## 3. Hoàn thiện pipeline
 

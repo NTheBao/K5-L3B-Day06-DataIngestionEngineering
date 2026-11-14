@@ -1,0 +1,283 @@
+{
+  "title": "Agribank–ZaloPay user guide retrieval benchmark",
+  "source": {
+    "source_id": "agribank_zalopay_guide",
+    "title": "Tài liệu hướng dẫn sử dụng ZaloPay (App)",
+    "path": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page_numbering": "Physical PDF page numbers, starting at 1"
+  },
+  "metadata_contract": {
+    "filter_field": "section",
+    "filter_value_source": "Section heading printed in the PDF, copied as displayed",
+    "filter_timing": "The section context is part of the user question and is supplied before retrieval.",
+    "values": [
+      "2. Xác thực tài khoản",
+      "3. Liên kết với Agribank",
+      "5. Nạp tiền vào ví ZaloPay",
+      "6. Rút tiền về Agribank",
+      "7. Thanh toán qua ví ZaloPay"
+    ]
+  },
+  "split_policy": {
+    "dev_count": 15,
+    "test_count": 5,
+    "test_frozen_before_runs": true,
+    "note": "The corpus currently contains one PDF, so source-level leakage cannot be eliminated. Test questions were chosen from distinct facts and spread across sections 4, 6, and 7; some topical overlap with dev remains, especially in section 6. Do not tune on test results. If any of these questions or their answers have already been used to tune a strategy, record the exposure and replace the test set before measuring."
+  },
+  "questions": [
+    {
+      "id": "D01",
+      "split": "dev",
+      "type": ["direct", "paraphrase"],
+      "question": "Khi đăng nhập ZaloPay bằng số điện thoại, cần có tài khoản nào và sau khi nhập số thì làm gì?",
+      "expected_answer": "Cần có tài khoản Zalo; nhập số điện thoại dùng để đăng ký hoặc đăng nhập ZaloPay rồi nhấn “Tiếp tục”.",
+      "gold_source_id": "agribank_zalopay_guide",
+      "gold_page": 5,
+      "evidence_quote": "Bạn cần có tài khoản Zalo. Nếu chưa có vui lòng đăng ký Zalo tại đây • Nhập số điện thoại dùng để đăng ký/đăng nhập ZaloPay • Ấn “Tiếp tục”",
+      "filter": null,
+      "leakage_risk": "Low within this small benchmark: a single-step login fact; all questions share one source."
+    },
+    {
+      "id": "D02",
+      "split": "dev",
+      "type": ["direct"],
+      "question": "Mã OTP đăng nhập bằng số điện thoại được gửi tới đâu?",
+      "expected_answer": "Mã OTP được gửi tới số điện thoại đã nhập.",
+      "gold_source_id": "agribank_zalopay_guide",
+      "gold_page": 6,
+      "evidence_quote": "Nhập mã xác thực (OTP) được gửi tới số điện thoại đã nhập",
+      "filter": null,
+      "leakage_risk": "Low within this small benchmark: the question targets one explicit instruction; all questions share one source."
+    },
+    {
+      "id": "D03",
+      "split": "dev",
+      "type": ["conditional", "exception"],
+      "question": "Ở bước tạo mật khẩu ZaloPay, người đã đăng ký ZaloPay từ trước cần làm gì và có thể bỏ qua những bước tiếp theo nào?",
+      "expected_answer": "Họ nhập mật khẩu ZaloPay để xác nhận; sau bước 4, chuyển thẳng tới bước 6.",
+      "gold_source_id": "agribank_zalopay_guide",
+      "gold_page": 7,
+      "evidence_quote": "Trong trường hợp đã đăng ký ZaloPay, nhập mật khẩu ZaloPay để xác nhận. Sau bước 4 tới thẳng bước 6",
+      "filter": null,
+      "leakage_risk": "Low within this small benchmark: tests a stated exception; all questions share one source."
+    },
+    {
+      "id": "D04",
+      "split": "dev",
+      "type": ["paraphrase", "conditional"],
+      "question": "Nếu chọn đăng nhập Zalo để tạo tài khoản ZaloPay thì có thể xác thực bằng những cách nào; người chưa có tài khoản Zalo xử lý ra sao?",
+      "expected_answer": "Có thể quét mã QR bằng Zalo hoặc nhập số điện thoại và mật khẩu Zalo; nếu chưa có tài khoản Zalo thì chọn “Đăng ký ngay!”.",
+      "gold_source_id": "agribank_zalopay_guide",
+      "gold_page": 11,
+      "evidence_quote": "Quét mã QR bằng Zalo để đăng nhập • Hoặc nhập số điện thoại và mật khẩu Zalo • Nếu chưa có tài khoản Zalo, vui lòng chọn “Đăng ký ngay!”",
+      "filter": null,
+      "leakage_risk": "Low within this small benchmark: covers alternate login paths not asked in D01; all questions share one source."
+    },
+    {
+      "id": "D05",
+      "split": "dev",
+      "type": ["conditional", "exception"],
+      "question": "Chỉ xét mục “2. Xác thực tài khoản”: ảnh giấy tờ tùy thân dùng để xác thực phải đáp ứng những điều kiện nào?",
+      "expected_answer": "Giấy tờ còn hạn và phải là hình gốc, không phải bản scan hoặc bản copy.",
+      "gold_source_id": "agribank_zalopay_guide",
+      "gold_page": 15,
+      "evidence_quote": "Điều kiện: Giấy tờ còn hạn, hình gốc, không scan/copy",
+      "filter": {
+        "section": "2. Xác thực tài khoản"
+      },
+      "leakage_risk": "Low within this small benchmark: one explicit eligibility condition; section filter is supplied in the question."
+    },
+    {
+      "id": "D06",
+      "split": "dev",
+      "type": ["direct"],
+      "question": "Khi nhập thông tin cá nhân để định danh, người dùng cần cung cấp những trường thông tin nào?",
+      "expected_answer": "Họ tên thật có dấu và viết cách, số CMND 9 hoặc 12 chữ số, ngày sinh, giới tính, quốc tịch; đồng thời đồng ý với thỏa thuận sử dụng ZaloPay.",
+      "gold_source_id": "agribank_zalopay_guide",
+      "gold_page": 17,
+      "evidence_quote": "Nhập họ và tên (họ và tên thật, viết cách, có dấu) • Nhập chứng minh nhân dân (9 hoặc 12 chữ số) • Chọn ngày sinh • Chọn giới tính • Chọn quốc tịch • Tick chọn đồng ý với thoả thuận sử dụng của ZaloPay",
+      "filter": null,
+      "leakage_risk": "Low within this small benchmark: list retrieval from a single page; all questions share one source."
+    },
+    {
+      "id": "D07",
+      "split": "dev",
+      "type": ["direct", "paraphrase"],
+      "question": "Sau khi hoàn tất định danh, khi nào người dùng được thông báo kết quả?",
+      "expected_answer": "Yêu cầu sẽ ở trạng thái chờ duyệt; ZaloPay thông báo kết quả định danh trong 24 giờ.",
+      "gold_source_id": "agribank_zalopay_guide",
+      "gold_page": 18,
+      "evidence_quote": "Yêu cầu định danh đang chờ duyệt; ZaloPay sẽ thông báo kết quả định danh trong 24 giờ",
+      "filter": null,
+      "leakage_risk": "Low within this small benchmark: one stated time window; all questions share one source."
+    },
+    {
+      "id": "D08",
+      "split": "dev",
+      "type": ["conditional", "filter"],
+      "question": "Chỉ xét mục “3. Liên kết với Agribank”: điều kiện về số điện thoại và dịch vụ nào phải thỏa mãn để liên kết bằng thẻ?",
+      "expected_answer": "Số điện thoại đăng ký Agribank phải trùng với số đăng ký tài khoản ZaloPay, và tài khoản đã đăng ký dịch vụ thanh toán trực tuyến (giao dịch Internet).",
+      "gold_source_id": "agribank_zalopay_guide",
+      "gold_page": 22,
+      "evidence_quote": "Số điện thoại đăng ký Agribank phải là số đăng ký tài khoản ZaloPay • Đã đăng ký dịch vụ thanh toán trực tuyến (giao dịch Internet).",
+      "filter": {
+        "section": "3. Liên kết với Agribank"
+      },
+      "leakage_risk": "Medium: another bank-link question is present in dev; the section filter is explicit and supplied before retrieval."
+    },
+    {
+      "id": "D09",
+      "split": "dev",
+      "type": ["direct", "filter"],
+      "question": "Trong mục “3. Liên kết với Agribank”, nhập thông tin nào khi liên kết bằng thẻ Agribank?",
+      "expected_answer": "Nhập số thẻ 16 chữ số, thời gian phát hành thẻ, họ tên chủ thẻ như in trên thẻ (viết cách, không dấu), rồi nhấn “Liên kết ngay”.",
+      "gold_source_id": "agribank_zalopay_guide",
+      "gold_page": 23,
+      "evidence_quote": "Nhập số thẻ ngân hàng (in trên mặt trước thẻ, gồm 16 số) • Nhập thời gian phát hành thẻ (in trên mặt trước thẻ) • Nhập họ và tên chủ thẻ (được in trên mặt trước của thẻ, viết cách, không dấu) • Ấn “Liên kết ngay”",
+      "filter": {
+        "section": "3. Liên kết với Agribank"
+      },
+      "leakage_risk": "Medium: same section as D08; exact target fields differ and the section filter is supplied before retrieval."
+    },
+    {
+      "id": "D10",
+      "split": "dev",
+      "type": ["paraphrase", "conditional"],
+      "question": "Nếu liên kết Agribank tại quầy, cần mang giấy tờ gì và thực hiện ở đâu?",
+      "expected_answer": "Mang một trong các giấy tờ CMND, hộ chiếu, căn cước hoặc thẻ quân nhân đã đăng ký khi mở tài khoản Agribank; đến chi nhánh/phòng giao dịch Agribank và yêu cầu nhân viên hướng dẫn.",
+      "gold_source_id": "agribank_zalopay_guide",
+      "gold_page": 28,
+      "evidence_quote": "Chuẩn bị giấy tờ cá nhân gồm 1 trong các giấy tờ sau: • CMND/Hộ chiếu/Căn cước/Thẻ quân nhân đã đăng ký khi mở tài khoản Agribank • Đến chi nhánh/phòng giao dịch Agribank (Tìm tại Danh sách chi nhánh) • Yêu cầu nhân viên Agribank hướng dẫn liên kết",
+      "filter": null,
+      "leakage_risk": "Low within this small benchmark: the branch-linking route is distinct from card linking; all questions share one source."
+    },
+    {
+      "id": "D11",
+      "split": "dev",
+      "type": ["direct", "filter"],
+      "question": "Trong mục “5. Nạp tiền vào ví ZaloPay”, hạn mức nạp tối thiểu và tối đa cho mỗi giao dịch là bao nhiêu?",
+      "expected_answer": "Tối thiểu 10.000đ và tối đa 5.000.000đ mỗi giao dịch.",
+      "gold_source_id": "agribank_zalopay_guide",
+      "gold_page": 35,
+      "evidence_quote": "Hạn mức nạp tối thiểu: 10.000đ/giao dịch • Hạn mức nạp tối đa: 5.000.000đ/giao dịch",
+      "filter": {
+        "section": "5. Nạp tiền vào ví ZaloPay"
+      },
+      "leakage_risk": "Medium: another top-up question is present in dev; the section filter is explicit and supplied before retrieval."
+    },
+    {
+      "id": "D12",
+      "split": "dev",
+      "type": ["conditional"],
+      "question": "Nếu Agribank chưa hiện là nguồn tiền khi nạp ví, thao tác nào được hướng dẫn?",
+      "expected_answer": "Nhấn “Thay đổi”, chọn nguồn tiền Agribank rồi nhấn biểu tượng “x”.",
+      "gold_source_id": "agribank_zalopay_guide",
+      "gold_page": 36,
+      "evidence_quote": "Ấn “Thay đổi” nếu chưa thấy nguồn tiền là Agribank • Chọn nguồn tiền Agribank và ấn “x”",
+      "filter": null,
+      "leakage_risk": "Medium: same transaction topic as D11 and D13, but asks a separate source-selection step."
+    },
+    {
+      "id": "D13",
+      "split": "dev",
+      "type": ["conditional", "exception", "filter"],
+      "question": "Chỉ tra cứu mục “5. Nạp tiền vào ví ZaloPay”: ngưỡng nào làm phát sinh bước xác minh OTP, và giao dịch thấp hơn xử lý thế nào?",
+      "expected_answer": "Giao dịch nạp lớn hơn 500.000đ cần xác minh OTP; giao dịch nhỏ hơn thì bỏ qua bước này.",
+      "gold_source_id": "agribank_zalopay_guide",
+      "gold_page": 38,
+      "evidence_quote": "chỉ áp dụng với giao dịch nạp tiền lớn hơn 500.000đ, giao dịch nhỏ hơn vui lòng bỏ qua bước này",
+      "filter": {
+        "section": "5. Nạp tiền vào ví ZaloPay"
+      },
+      "leakage_risk": "Medium: OTP conditions also occur in section 7; the section filter disambiguates the transaction context."
+    },
+    {
+      "id": "D14",
+      "split": "dev",
+      "type": ["direct", "filter"],
+      "question": "Trong mục “6. Rút tiền về Agribank”, mức rút tối thiểu và tối đa cho mỗi giao dịch là bao nhiêu?",
+      "expected_answer": "Tối thiểu 50.000đ/giao dịch và tối đa 5.000.000/giao dịch.",
+      "gold_source_id": "agribank_zalopay_guide",
+      "gold_page": 42,
+      "evidence_quote": "Hạn mức rút tối thiểu: 50.000đ/giao dịch • Hạn mức rút tối đa: 5.000.000/giao dịch",
+      "filter": {
+        "section": "6. Rút tiền về Agribank"
+      },
+      "leakage_risk": "Medium: test T16 asks about the withdrawal source in the same section; this question asks only the limits."
+    },
+    {
+      "id": "D15",
+      "split": "dev",
+      "type": ["direct"],
+      "question": "Ở bước xác nhận giao dịch rút tiền, người dùng phải làm gì?",
+      "expected_answer": "Nhấn “Xác nhận giao dịch” và nhập mật khẩu để xác nhận thanh toán.",
+      "gold_source_id": "agribank_zalopay_guide",
+      "gold_page": 44,
+      "evidence_quote": "Ấn “Xác nhận giao dịch” Bước 4: Xác nhận giao dịch rút tiền • Nhập mật khẩu để xác nhận thanh toán",
+      "filter": null,
+      "leakage_risk": "Medium: test T16 is in the withdrawal section but asks about a separate step."
+    },
+    {
+      "id": "T16",
+      "split": "test",
+      "type": ["direct"],
+      "question": "Ở bước hủy liên kết ngân hàng, người dùng chọn thao tác nào?",
+      "expected_answer": "Chọn “Huỷ liên kết thẻ”.",
+      "gold_source_id": "agribank_zalopay_guide",
+      "gold_page": 32,
+      "evidence_quote": "Chọn “Huỷ liên kết thẻ”",
+      "filter": null,
+      "leakage_risk": "Low: the cancellation action is held out as a distinct section from the dev questions; all questions share one source."
+    },
+    {
+      "id": "T17",
+      "split": "test",
+      "type": ["conditional", "paraphrase"],
+      "question": "Với sản phẩm hoặc dịch vụ thanh toán bên ngoài, tài liệu nêu những lựa chọn thanh toán nào tùy địa điểm?",
+      "expected_answer": "Tùy địa điểm, có thể quét mã QR hoặc sử dụng mã thanh toán.",
+      "gold_source_id": "agribank_zalopay_guide",
+      "gold_page": 53,
+      "evidence_quote": "Tuỳ từng địa điểm thanh toán, bạn có thể thanh toán bằng 1 trong 2 cách: Quét mã QR hoặc sử dụng Mã thanh toán",
+      "filter": null,
+      "leakage_risk": "Medium: dev does not ask about external-payment methods, but questions T18–T20 share section 7."
+    },
+    {
+      "id": "T18",
+      "split": "test",
+      "type": ["direct", "paraphrase"],
+      "question": "Khi quét QR tại điểm thanh toán, camera cần hướng vào đâu và có thể dùng nguồn ảnh nào khác?",
+      "expected_answer": "Hướng khung camera vào mã QR tại địa điểm thanh toán; cũng có thể sử dụng hình ảnh có sẵn.",
+      "gold_source_id": "agribank_zalopay_guide",
+      "gold_page": 54,
+      "evidence_quote": "Hướng khung camera điện thoại vào mã QR tại địa điểm thanh toán, hoặc sử dụng hình ảnh có sẵn",
+      "filter": null,
+      "leakage_risk": "Medium: shares section 7 with dev payment questions, but this external QR instruction is not asked elsewhere."
+    },
+    {
+      "id": "T19",
+      "split": "test",
+      "type": ["conditional", "exception", "filter"],
+      "question": "Chỉ tra cứu mục “7. Thanh toán qua ví ZaloPay”: khi thanh toán bên ngoài bằng QR, giao dịch nào cần OTP và giao dịch thấp hơn xử lý ra sao?",
+      "expected_answer": "Giao dịch thanh toán lớn hơn 500.000đ cần OTP; giao dịch nhỏ hơn thì bỏ qua bước OTP.",
+      "gold_source_id": "agribank_zalopay_guide",
+      "gold_page": 57,
+      "evidence_quote": "(chỉ áp dụng với giao dịch thanh toán lớn hơn 500.000đ, giao dịch nhỏ hơn vui lòng bỏ qua bước này)",
+      "filter": {
+        "section": "7. Thanh toán qua ví ZaloPay"
+      },
+      "leakage_risk": "Medium: OTP is also tested in D13 for top-up; the section filter provides the required transaction context."
+    },
+    {
+      "id": "T20",
+      "split": "test",
+      "type": ["direct", "paraphrase"],
+      "question": "Khi rút tiền, cần chọn nguồn tiền Agribank ở đâu?",
+      "expected_answer": "Chọn nguồn tiền Agribank tại mục Ngân hàng liên kết.",
+      "gold_source_id": "agribank_zalopay_guide",
+      "gold_page": 43,
+      "evidence_quote": "Chọn nguồn tiền Agribank tại Ngân hàng liên kết",
+      "filter": null,
+      "leakage_risk": "Medium: dev questions D14–D15 cover other steps in the withdrawal section; this exact source-selection fact is held out."
+    }
+  ]
+}

@@ -1,23 +1,17 @@
-"""Read-only setup check; this is a utility, not the student pipeline solution."""
+"""Setup check; this is a utility, not the student pipeline solution."""
 import os
-import sys
 from pathlib import Path
 
-import psycopg
+import chromadb
 from dotenv import load_dotenv
 
-load_dotenv(Path(__file__).resolve().parents[1] / '.env')
-url = os.getenv('DATABASE_URL')
-if not url:
-    sys.exit('DATABASE_URL missing: copy starter/.env.example to starter/.env first.')
-try:
-    with psycopg.connect(url, connect_timeout=5) as connection:
-        with connection.cursor() as cursor:
-            cursor.execute("SELECT current_database(), current_setting('server_version'), extversion FROM pg_extension WHERE extname = 'vector'")
-            row = cursor.fetchone()
-            if not row:
-                sys.exit('Connected, but pgvector extension is missing. See starter/README.md.')
-            print(f'Database: {row[0]} | PostgreSQL: {row[1]} | pgvector: {row[2]}')
-except psycopg.Error:
-    sys.exit('Database connection failed. Check Docker, port and DATABASE_URL in starter/.env.')
+starter_dir = Path(__file__).resolve().parents[1]
+load_dotenv(starter_dir / '.env')
+chroma_path = Path(os.getenv('CHROMA_PATH', './data/chroma')).expanduser()
+if not chroma_path.is_absolute():
+    chroma_path = starter_dir / chroma_path
+
+client = chromadb.PersistentClient(path=str(chroma_path))
+client.heartbeat()
+print(f'ChromaDB: {chromadb.__version__} | Persistent path: {chroma_path}')
 print('Setup OK. Pipeline functions still need to be implemented.')
