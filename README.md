@@ -10,7 +10,7 @@ Biến tài liệu thành kho tri thức có thể truy xuất cho AI agent, r�
 
 ## Bắt đầu nhanh
 
-Dùng [starter PostgreSQL + pgvector](starter/README.md) để dựng database và hoàn thiện các hàm TODO, hoặc tự chọn vector store tương đương. Starter chỉ là khung: **bạn tự hiện thực pipeline và benchmark**.
+Dùng [starter Chroma](starter/README.md) để chạy ingestion và top-3 local cho ba cấu hình A/B/C; tiếp tục audit thủ công coherence/grounding và hoàn thiện báo cáo theo hướng dẫn. Bạn cũng có thể tự chọn vector store tương đương.
 
 ## 1. Xây pipeline
 
@@ -32,11 +32,13 @@ Dùng cùng dữ liệu, model và câu hỏi cho cả ba cấu hình. Tách **1
 2. Điền [thông tin học viên](STUDENT.md), [nhật ký thí nghiệm](artifacts/experiment_log.csv) và bản sao [mẫu báo cáo cá nhân](report/individual/MSSV_HoTen.md).
 3. Kiểm tra mã nguồn, cách chạy, manifest dữ liệu và checklist trong [SUBMISSION.md](SUBMISSION.md).
 
+Các hiện vật đang dùng trong bài này: [manifest dữ liệu](data/manifest.md), [benchmark có gold evidence](benchmark/benchmark.json), [kết quả và trace](results/), [nhật ký A/B/C](artifacts/experiment_log.csv), và [báo cáo cá nhân](report/individual/MSSV_HoTen.md). Quyền tái phân phối PDF chưa được xác minh; xem manifest trước khi chia sẻ repo hoặc dữ liệu.
+
 ## Tài liệu hướng dẫn
 
 | Bạn cần tìm | Tài liệu |
 |---|---|
-| Setup baseline PostgreSQL + pgvector | [starter/README.md](starter/README.md) |
+| Setup baseline Chroma | [starter/README.md](starter/README.md) |
 | Các bước làm và cách tính chỉ số | [GUIDE.md](GUIDE.md) |
 | Tiến độ trong 4 giờ | [CHECKPOINTS.md](CHECKPOINTS.md) |
 | Năm tiêu chí benchmark và bộ câu hỏi | [BENCHMARK.md](BENCHMARK.md) |
@@ -44,4 +46,4 @@ Dùng cùng dữ liệu, model và câu hỏi cho cả ba cấu hình. Tách **1
 | Quy tắc sử dụng dữ liệu, AI và API | [RULES.md](RULES.md) |
 | Cách nộp bài | [SUBMISSION.md](SUBMISSION.md) |
 
-[data/format-example.json](data/format-example.json) chỉ minh họa định dạng, không phải corpus đủ điều kiện. Phần xử lý và benchmark do bạn tự hiện thực; không bắt buộc xây chatbot.
+[data/format-example.json](data/format-example.json) chỉ minh họa định dạng, không phải corpus đủ điều kiện. Starter lưu trace và tính metric retrieval; tác giả cần hoàn thành nhãn coherence/grounding và báo cáo cuối. Không bắt buộc xây chatbot.

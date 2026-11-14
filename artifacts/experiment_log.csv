@@ -1,4 +1,4 @@
 strategy,chunking,chunk_size,overlap,metadata,filter,vectorizer,hypothesis,dev_hit1,dev_hit3,test_hit1,test_hit3,notes
-A,,,,,,,,,,,,
-B,,,,,,,,,,,,
-C,,,,,,,,,,,,
+A,fixed_size,500 chars,50 chars,"document_id;source;page;section",none,"sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2; 384d; Chroma cosine","Baseline; fixed windows may split a procedural step. Hypothesis documented after the run, not preregistered.",8/15,11/15,3/5,5/5,"61 chunks; index build 2.6318s; local cost $0; metadata audit 15/15."
+B,logical paragraph/step blocks,max 300 chars,0,"document_id;source;page;section",none,"sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2; 384d; Chroma cosine","Logical boundaries may improve coherence but change evidence coverage. Hypothesis documented after the run, not preregistered.",8/15,8/15,2/5,4/5,"66 chunks; index build 1.7381s; local cost $0; metadata audit 15/15."
+C,logical paragraph/step blocks,max 300 chars,0,"document_id;source;page;section","user-supplied section filter before retrieval","sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2; 384d; Chroma cosine","Filtering by section may constrain scope; this reuses B chunks and changes retrieval filtering only. Hypothesis documented after the run, not preregistered.",8/15,9/15,2/5,4/5,"66 chunks shared with B; index build 1.7381s; local cost $0; metadata audit 15/15; test filter compliance 1/1."
