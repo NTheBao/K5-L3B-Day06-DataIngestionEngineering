@@ -15,11 +15,12 @@ starter/
 │   ├── chunking.py        # fixed-size và paragraph/step-aware
 │   ├── embeddings.py      # Sentence Transformers local
 │   ├── store.py           # Chroma persistent, cosine và metadata filter
-│   ├── evaluation.py      # phần đánh giá top-k được hoàn thiện ở bước tiếp
+│   ├── evaluation.py      # Hit@1/Evidence Hit@3 và tổng hợp theo split
 │   └── run.py             # nạp dữ liệu, lập index A/B và báo cáo
-├── data/                  # bạn tự chuẩn bị corpus được phép sử dụng
-└── results/               # lưu kết quả của bạn
+└── data/                  # PDF corpus và database Chroma
 ```
+
+Benchmark và kết quả đặt tại root repo: `../benchmark/` và `../results/`.
 
 ## 1. Cài và kiểm tra database
 
@@ -54,8 +55,8 @@ if (-not (Test-Path .env)) { Copy-Item .env.example .env }
 python -m src.run
 ```
 
-Mặc định pipeline dùng PDF trong `data/`, benchmark `data/benchmark.json`, Chroma ở `data/chroma/` và ghi báo cáo timestamped vào `results/`. Có thể truyền `--pdf`, `--benchmark`, `--results`, `--collection` hoặc `--model`. Báo cáo lưu fingerprint nguồn/benchmark, model và version, số chiều, metadata section, số chunk/ký tự/token, thời gian, chi phí local bằng 0 và trang lỗi/không nhận diện được section.
+Mặc định pipeline dùng PDF trong `data/`, benchmark `../benchmark/benchmark.json`, Chroma ở `data/chroma/` và ghi báo cáo timestamped vào `../results/` tại root repo. Có thể truyền `--pdf`, `--benchmark`, `--results`, `--collection` hoặc `--model`. Báo cáo lưu fingerprint nguồn/benchmark, model và version, số chiều, metadata section, số chunk/ký tự/token, thời gian, chi phí local bằng 0 và trang lỗi/không nhận diện được section.
 
-Chiến lược A dùng chunk 500 ký tự, overlap 50; B gom khối/step theo cấu trúc trang với giới hạn 300 ký tự. C chia sẻ nguyên index B, chỉ lọc theo `section` khi filter được cung cấp trước truy xuất. `python -m src.run` tạo index, chưa chạy bộ câu hỏi top-3 hoặc chấm điểm thủ công; xem [BENCHMARK.md](../BENCHMARK.md) cho bước đánh giá.
+Chiến lược A dùng chunk 500 ký tự, overlap 50; B gom khối/step theo cấu trúc trang với giới hạn 300 ký tự. C chia sẻ nguyên index B, chỉ lọc theo `section` khi filter được cung cấp trước truy xuất. `python -m src.run` chạy top-3 cho cùng bộ dev/test, lưu trace chứa câu hỏi và các chunk/score/metadata được truy xuất, đồng thời tính Hit@1/Evidence Hit@3 riêng theo split. Lệnh tạo thêm phiếu `manual-review-*.json` với 10 trang coherence chung cho A/B/C và 5 câu test grounding cho mỗi chiến lược. Điểm thủ công được để trống có chủ đích; tác giả cần điền rubric, lý do và thông tin người chấm theo [GUIDE.md](../GUIDE.md). Báo cáo filter compliance chỉ áp dụng cho C vì A/B không bật lọc.
 
 Nạp lại cùng nguồn upsert chunk có ID ổn định và xóa chunk cũ không còn dùng trong phạm vi tài liệu/chiến lược đó. Không xóa database để đổi model: dùng collection mới hoặc xử lý migration có chủ đích. Lưu code, cấu hình, kết quả và lệnh chạy để người chấm tái lập; không commit key hoặc dữ liệu không có quyền chia sẻ.

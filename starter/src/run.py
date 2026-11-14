@@ -18,6 +18,7 @@ from dotenv import load_dotenv
 
 from .chunking import by_paragraph, fixed_size
 from .embeddings import MyEmbedder
+from .evaluation import evaluate_query, summarize
 from .ingestion import load_pdf
 from .models import Chunk, DocumentPage
 from .store import ChromaStore
@@ -114,12 +115,265 @@ def _index_strategy(
     return stats
 
 
+def _run_benchmark(
+    benchmark: dict[str, Any],
+    embedder: MyEmbedder,
+    store: ChromaStore,
+) -> tuple[list[dict[str, Any]], float, dict[str, float]]:
+    traces: list[dict[str, Any]] = []
+    query_embedding_seconds = 0.0
+    search_seconds = {strategy: 0.0 for strategy in ("A", "B", "C")}
+    for question in benchmark["questions"]:
+        started = time.perf_counter()
+        query_vector = embedder.embed_query(question["question"])
+        query_embedding_seconds += time.perf_counter() - started
+
+        for strategy in ("A", "B", "C"):
+            filters = question.get("filter") if strategy == "C" else None
+            started = time.perf_counter()
+            hits = store.search(strategy, query_vector, top_k=3, filters=filters)
+            elapsed = time.perf_counter() - started
+            search_seconds[strategy] += elapsed
+            trace = evaluate_query(question, hits)
+            trace["strategy"] = strategy
+            trace["search_seconds"] = round(elapsed, 6)
+            traces.append(trace)
+    return traces, query_embedding_seconds, search_seconds
+
+
+def _metadata_audit(
+    traces: list[dict[str, Any]],
+    pages_by_number: dict[int, DocumentPage],
+    test_question_count: int,
+) -> dict[str, Any]:
+    audit: dict[str, Any] = {}
+    for strategy in ("A", "B", "C"):
+        test_traces = [
+            trace
+            for trace in traces
+            if trace["strategy"] == strategy and trace["split"] == "test"
+        ]
+        correct_records = 0
+        errors: list[dict[str, Any]] = []
+        filtered_questions = (
+            [trace for trace in test_traces if trace.get("filter")]
+            if strategy == "C"
+            else []
+        )
+        compliant_questions = 0
+        filter_failures: list[str] = []
+
+        for trace in test_traces:
+            for rank in range(3):
+                if rank >= len(trace["retrieved_chunks"]):
+                    errors.append(
+                        {
+                            "question_id": trace["question_id"],
+                            "rank": rank + 1,
+                            "errors": ["no result returned for top-3 slot"],
+                        }
+                    )
+                    continue
+
+                hit = trace["retrieved_chunks"][rank]
+                metadata = hit["metadata"]
+                page_number = metadata.get("page")
+                source_page = pages_by_number.get(page_number) if isinstance(page_number, int) else None
+                problems: list[str] = []
+                if source_page is None or metadata.get("document_id") != source_page.document_id:
+                    problems.append("document_id does not match source page")
+                if source_page is None or metadata.get("source") != source_page.source:
+                    problems.append("source/page is absent or does not match the PDF")
+                if source_page is None or metadata.get("section") != source_page.metadata.get("section"):
+                    problems.append("section metadata is absent or does not match the PDF heading")
+                if not problems:
+                    correct_records += 1
+                else:
+                    errors.append(
+                        {
+                            "question_id": trace["question_id"],
+                            "rank": rank + 1,
+                            "chunk_id": hit["chunk_id"],
+                            "errors": problems,
+                        }
+                    )
+
+            if strategy == "C" and trace.get("filter"):
+                expected_section = trace["filter"].get("section")
+                hits = trace["retrieved_chunks"]
+                if hits and all(hit["metadata"].get("section") == expected_section for hit in hits):
+                    compliant_questions += 1
+                else:
+                    filter_failures.append(trace["question_id"])
+
+        expected_records = test_question_count * 3
+        audit[strategy] = {
+            "top3_metadata": {
+                "correct_records": correct_records,
+                "total_records": expected_records,
+                "errors": errors,
+            },
+            "test_filter_compliance": {
+                "applicable": strategy == "C",
+                "compliant_questions": compliant_questions if strategy == "C" else None,
+                "total_filtered_test_questions": len(filtered_questions),
+                "failure_ids": filter_failures,
+                "rate": (
+                    compliant_questions / len(filtered_questions)
+                    if filtered_questions
+                    else None
+                ),
+            },
+        }
+
+    audit["interpretation"] = {
+        "useful_field": "`section` supports a user-supplied scope restriction; `source` and `page` make results traceable.",
+        "limitation": "A single PDF and seven sections limit filter diversity; section labels depend on extracted headings.",
+    }
+    return audit
+
+
+def _manual_review_packet(
+    traces: list[dict[str, Any]],
+    chunks_by_strategy: dict[str, list[Chunk]],
+    sample_pages: list[int],
+) -> dict[str, Any]:
+    coherence_items: list[dict[str, Any]] = []
+    for page_number in sample_pages:
+        for strategy in ("A", "B", "C"):
+            storage_strategy = "B" if strategy == "C" else strategy
+            matching_chunks = sorted(
+                (
+                    chunk
+                    for chunk in chunks_by_strategy[storage_strategy]
+                    if chunk.page == page_number
+                ),
+                key=lambda chunk: chunk.metadata["chunk_index"],
+            )
+            chosen_chunk = matching_chunks[0] if matching_chunks else None
+            coherence_items.append(
+                {
+                    "strategy": strategy,
+                    "page": page_number,
+                    "chunk_id": chosen_chunk.chunk_id if chosen_chunk else None,
+                    "text": chosen_chunk.text if chosen_chunk else None,
+                    "score_0_to_2": None,
+                    "reason": "",
+                }
+            )
+
+    grounding_items = [
+        {
+            "strategy": trace["strategy"],
+            "question_id": trace["question_id"],
+            "question": trace["question"],
+            "expected_answer": trace["expected_answer"],
+            "gold_evidence": trace["gold_evidence"],
+            "filter": trace["filter"],
+            "retrieved_chunks": trace["retrieved_chunks"],
+            "score_0_to_2": None,
+            "reason": "",
+        }
+        for trace in traces
+        if trace["split"] == "test"
+    ]
+    return {
+        "status": "pending_author_review",
+        "reviewer": None,
+        "method": "Apply the GUIDE.md 0-2 rubric to the displayed source chunks; these labels are not inferred from Hit@3.",
+        "coherence": {
+            "sampling_policy": "The first ten content page IDs in ascending order, selected before retrieval results were produced.",
+            "pages": sample_pages,
+            "rubric": {
+                "0": "Cut mid-idea or missing subject; not understandable.",
+                "1": "Partly understandable but missing context.",
+                "2": "Self-contained and preserves the complete idea.",
+            },
+            "items": coherence_items,
+        },
+        "grounding": {
+            "rubric": {
+                "0": "No evidence in top-3.",
+                "1": "Evidence exists but required condition/context is missing.",
+                "2": "Top-3 evidence is sufficient to answer and trace to source.",
+            },
+            "items": grounding_items,
+        },
+    }
+
+
+def _impact_report(
+    summary: dict[str, Any],
+    strategy_results: dict[str, dict[str, Any]],
+    search_seconds: dict[str, float],
+    selection_policy: str,
+) -> dict[str, Any]:
+    def build_seconds(strategy: str) -> float:
+        index_strategy = "B" if strategy == "C" else strategy
+        result = strategy_results[index_strategy]
+        return (
+            result["chunking_seconds"]
+            + result["embedding_seconds"]
+            + result["storage_seconds"]
+        )
+
+    dev_score = lambda strategy: summary[strategy]["dev"]
+    selected_strategy = max(
+        ("A", "B", "C"),
+        key=lambda strategy: (
+            dev_score(strategy)["evidence_hit_at_3"]["hits"],
+            dev_score(strategy)["hit_at_1"]["hits"],
+            -build_seconds(strategy),
+        ),
+    )
+    comparisons: dict[str, Any] = {}
+    for left, right in (("A", "B"), ("B", "C")):
+        split_deltas: dict[str, Any] = {}
+        for split in ("dev", "test"):
+            left_metrics = summary[left][split]
+            right_metrics = summary[right][split]
+            split_deltas[split] = {
+                "evidence_hit_at_3_delta_hits": (
+                    right_metrics["evidence_hit_at_3"]["hits"]
+                    - left_metrics["evidence_hit_at_3"]["hits"]
+                ),
+                "hit_at_1_delta_hits": (
+                    right_metrics["hit_at_1"]["hits"]
+                    - left_metrics["hit_at_1"]["hits"]
+                ),
+            }
+        comparisons[f"{left}_vs_{right}"] = {
+            "split_metric_deltas": split_deltas,
+            "left_chunk_count": strategy_results["B" if left == "C" else left]["chunk_count"],
+            "right_chunk_count": strategy_results["B" if right == "C" else right]["chunk_count"],
+            "left_index_build_seconds": round(build_seconds(left), 4),
+            "right_index_build_seconds": round(build_seconds(right), 4),
+            "left_query_search_seconds": round(search_seconds[left], 4),
+            "right_query_search_seconds": round(search_seconds[right], 4),
+            "right_shares_left_index": left == "B" and right == "C",
+        }
+
+    return {
+        "selection_policy": selection_policy,
+        "selected_on_dev_only": selected_strategy,
+        "test_used_for_selection": False,
+        "comparisons": comparisons,
+        "exact_evidence_misses": {
+            strategy: {
+                split: summary[strategy][split]["exact_evidence_miss_ids"]
+                for split in ("dev", "test")
+            }
+            for strategy in ("A", "B", "C")
+        },
+    }
+
+
 def main() -> None:
     load_dotenv()
     parser = argparse.ArgumentParser(description="Build local A/B/C vector indexes.")
     parser.add_argument("--pdf", type=Path, default=Path("data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf"))
-    parser.add_argument("--benchmark", type=Path, default=Path("data/benchmark.json"))
-    parser.add_argument("--results", type=Path, default=Path("results"))
+    parser.add_argument("--benchmark", type=Path, default=Path("../benchmark/benchmark.json"))
+    parser.add_argument("--results", type=Path, default=Path("../results"))
     parser.add_argument("--model", default=None)
     parser.add_argument("--collection", default=COLLECTION_NAME)
     args = parser.parse_args()
@@ -145,6 +399,7 @@ def main() -> None:
         raise ValueError("Every benchmark question must use the declared source_id.")
 
     run_started = time.perf_counter()
+    run_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
     source = args.pdf.as_posix()
     pages = load_pdf(args.pdf, document_id, source)
     content_pages = _content_pages(pages)
@@ -226,6 +481,38 @@ def main() -> None:
         "cost_usd": 0.0,
     }
 
+    selection_policy = benchmark.get("selection_policy")
+    if not isinstance(selection_policy, str) or not selection_policy:
+        raise ValueError("Benchmark must record a selection policy before evaluation.")
+    coherence_sample_pages = [
+        page.page for page in sorted(content_pages, key=lambda page: page.page)[:10]
+    ]
+    traces, query_embedding_seconds, search_seconds = _run_benchmark(
+        benchmark,
+        embedder,
+        store,
+    )
+    if len(traces) != len(benchmark["questions"]) * 3:
+        raise RuntimeError("The benchmark did not produce one trace per question and strategy.")
+    retrieval_summary = summarize(traces)
+    question_counts = Counter(question["split"] for question in benchmark["questions"])
+    metadata_audit = _metadata_audit(
+        traces,
+        {page.page: page for page in pages},
+        question_counts["test"],
+    )
+    manual_review = _manual_review_packet(
+        traces,
+        {"A": chunks_a, "B": chunks_b, "C": chunks_b},
+        coherence_sample_pages,
+    )
+    strategy_impact = _impact_report(
+        retrieval_summary,
+        strategy_results,
+        search_seconds,
+        selection_policy,
+    )
+
     section_counts = Counter(
         str(page.metadata["section"]) for page in content_pages
     )
@@ -244,8 +531,33 @@ def main() -> None:
         )
     pages_without_text, text_without_section = _page_issues(pages)
     source_digest = hashlib.sha256(args.pdf.read_bytes()).hexdigest()
-    question_counts = Counter(question["split"] for question in benchmark["questions"])
-    run_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
+    args.results.mkdir(parents=True, exist_ok=True)
+    trace_path = args.results / f"traces-{run_id}.json"
+    review_path = args.results / f"manual-review-{run_id}.json"
+    trace_path.write_text(
+        json.dumps(
+            {
+                "run_id": run_id,
+                "benchmark_sha256": benchmark_hash,
+                "top_k": 3,
+                "query_embedding_seconds": round(query_embedding_seconds, 4),
+                "search_seconds_by_strategy": {
+                    strategy: round(seconds, 4)
+                    for strategy, seconds in search_seconds.items()
+                },
+                "summary": retrieval_summary,
+                "traces": traces,
+            },
+            ensure_ascii=False,
+            indent=2,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    review_path.write_text(
+        json.dumps(manual_review, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
     report: dict[str, Any] = {
         "run_id": run_id,
         "completed_at_utc": datetime.now(timezone.utc).isoformat(),
@@ -299,6 +611,21 @@ def main() -> None:
             "search": "Approximate nearest-neighbor using Chroma HNSW.",
         },
         "strategies": strategy_results,
+        "retrieval": {
+            "top_k": 3,
+            "query_embedding_seconds": round(query_embedding_seconds, 4),
+            "search_seconds_by_strategy": {
+                strategy: round(seconds, 4)
+                for strategy, seconds in search_seconds.items()
+            },
+            "summary": retrieval_summary,
+            "trace_path": trace_path.as_posix(),
+            "manual_review_path": review_path.as_posix(),
+        },
+        "metadata_audit": metadata_audit,
+        "manual_review_status": manual_review["status"],
+        "coherence_sample_pages": coherence_sample_pages,
+        "strategy_impact": strategy_impact,
         "execution": {
             "command": "python -m src.run",
             "python_version": platform.python_version(),
@@ -313,7 +640,6 @@ def main() -> None:
         "cost_usd": 0.0,
     }
 
-    args.results.mkdir(parents=True, exist_ok=True)
     report_path = args.results / f"pipeline-{run_id}.json"
     report_path.write_text(
         json.dumps(report, ensure_ascii=False, indent=2) + "\n",
@@ -323,6 +649,15 @@ def main() -> None:
     print(f"Pipeline complete: {len(content_pages)} content pages, {len(chunks_a)} A chunks, {len(chunks_b)} B/C chunks.")
     print(f"Chroma collection: {args.collection} at {chroma_path}")
     print(f"Report: {report_path}")
+    print(f"Top-3 traces: {trace_path}")
+    print(f"Manual review sheet: {review_path}")
+    for strategy in ("A", "B", "C"):
+        split_metrics = retrieval_summary[strategy]
+        print(
+            f"{strategy}: dev Evidence Hit@3 "
+            f"{split_metrics['dev']['evidence_hit_at_3']['hits']}/{split_metrics['dev']['question_count']}; "
+            f"test {split_metrics['test']['evidence_hit_at_3']['hits']}/{split_metrics['test']['question_count']}"
+        )
     if pages_without_text:
         print(f"Pages without extractable text: {pages_without_text}")
 
