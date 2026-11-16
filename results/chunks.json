@@ -1,0 +1,978 @@
+[
+  {
+    "chunk_id": "284d02dd3ad4cd192af88ffe",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 3,
+    "text": "1. Đăng ký/Đăng nhập tài khoản ZaloPay Đăng ký/Đăng nhập để có thể sử dụng ví điện tử ZaloPay",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "1. Đăng ký/Đăng nhập",
+      "chunk_index": 0,
+      "char_count": 93,
+      "strategy": "A"
+    },
+    "id": "284d02dd3ad4cd192af88ffe",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "274be0232e290002f227ff7d",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 4,
+    "text": "1. Đăng ký/Đăng nhập • Chọn “Đăng nhập với số điện thoại” Cách 1: Đăng nhập với số điện thoại Bước 1: Chọn đăng nhập với số điện thoại",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "1. Đăng ký/Đăng nhập",
+      "chunk_index": 0,
+      "char_count": 134,
+      "strategy": "A"
+    },
+    "id": "274be0232e290002f227ff7d",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "a63e805531bc5bb37a2187d1",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 5,
+    "text": "• Bạn cần có tài khoản Zalo. Nếu chưa có vui lòng đăng ký Zalo tại đây • Nhập số điện thoại dùng để đăng ký/đăng nhập ZaloPay • Ấn “Tiếp tục” Cách 1: Đăng nhập với số điện thoại 1. Đăng ký/Đăng nhập Bước 2: Nhập số điện thoại dùng để đăng ký/đăng nhập ZaloPay",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "1. Đăng ký/Đăng nhập",
+      "chunk_index": 0,
+      "char_count": 259,
+      "strategy": "A"
+    },
+    "id": "a63e805531bc5bb37a2187d1",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "74ddb2a8737cb491035f3383",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 6,
+    "text": "Cách 1: Đăng nhập với số điện thoại Bước 3: Nhập mã xác thực (OTP) 1. Đăng ký/Đăng nhập • Nhập mã xác thực (OTP) được gửi tới số điện thoại đã nhập",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "1. Đăng ký/Đăng nhập",
+      "chunk_index": 0,
+      "char_count": 147,
+      "strategy": "A"
+    },
+    "id": "74ddb2a8737cb491035f3383",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "bbecfb84e86a3b49494ce500",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 7,
+    "text": "Cách 1: Đăng nhập với số điện thoại • Tạo mật khẩu • Trong trường hợp đã đăng ký ZaloPay, nhập mật khẩu ZaloPay để xác nhận. Sau bước 4 tới thẳng bước 6 1. Đăng ký/Đăng nhập Bước 4: Tạo và xác thực mật khẩu ZaloPay • Xác nhận mật khẩu",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "1. Đăng ký/Đăng nhập",
+      "chunk_index": 0,
+      "char_count": 234,
+      "strategy": "A"
+    },
+    "id": "bbecfb84e86a3b49494ce500",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "6afde05274e74cb13601d333",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 8,
+    "text": "Cách 1: Đăng nhập với số điện thoại • Ấn “Liên kết ngay” 1. Đăng ký/Đăng nhập Bước 5: Liên kết với Zalo • Điều hướng sang đăng nhập Zalo. Nếu chưa đăng ký tài khoản Zalo, vui lòng đăng ký tại đây để sử dụng ZaloPay.",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "1. Đăng ký/Đăng nhập",
+      "chunk_index": 0,
+      "char_count": 215,
+      "strategy": "A"
+    },
+    "id": "6afde05274e74cb13601d333",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "b75f4eed2cc6bd02c704a6bc",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 9,
+    "text": "Cách 1: Đăng nhập với số điện thoại • Đăng nhập/Đăng ký thành công, hiển thị trang chủ ZaloPay 1. Đăng ký/Đăng nhập Bước 6: Tạo tài khoản ZaloPay thành công",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "1. Đăng ký/Đăng nhập",
+      "chunk_index": 0,
+      "char_count": 156,
+      "strategy": "A"
+    },
+    "id": "b75f4eed2cc6bd02c704a6bc",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "e6966a0acdf35458198b950c",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 10,
+    "text": "Cách 2: Đăng nhập với Zalo 1. Đăng ký/Đăng nhập • Chọn “Đăng nhập với Zalo” Bước 1: Chọn đăng nhập với Zalo",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "1. Đăng ký/Đăng nhập",
+      "chunk_index": 0,
+      "char_count": 107,
+      "strategy": "A"
+    },
+    "id": "e6966a0acdf35458198b950c",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "9dfa80a3aaaf109a2a0701b8",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 11,
+    "text": "• Quét mã QR bằng Zalo để đăng nhập • Hoặc nhập số điện thoại và mật khẩu Zalo • Nếu chưa có tài khoản Zalo, vui lòng chọn “Đăng ký ngay!” Cách 2: Đăng nhập với Zalo 1. Đăng ký/Đăng nhập Bước 2: Dùng Zalo đăng nhập",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "1. Đăng ký/Đăng nhập",
+      "chunk_index": 0,
+      "char_count": 214,
+      "strategy": "A"
+    },
+    "id": "9dfa80a3aaaf109a2a0701b8",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "7a837bee490512a8a9fae147",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 12,
+    "text": "Cách 2: Đăng nhập với Zalo • Hiển thị trang chủ ZaloPay 1. Đăng ký/Đăng nhập Bước 3: Tạo tài khoản ZaloPay thành công",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "1. Đăng ký/Đăng nhập",
+      "chunk_index": 0,
+      "char_count": 117,
+      "strategy": "A"
+    },
+    "id": "7a837bee490512a8a9fae147",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "96dc6ae4e5919a289424d876",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 13,
+    "text": "2. Xác thực tài khoản ZaloPay Xác thực thông tin nhằm bảo mật tài chính và giảm thiểu gian lận, trộm cắp danh tính, hoạt động “rửa tiền” và các hành động phạm pháp khác (Theo thông tư 23/2019/TT-NHNN)",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "2. Xác thực tài khoản",
+      "chunk_index": 0,
+      "char_count": 200,
+      "strategy": "A"
+    },
+    "id": "96dc6ae4e5919a289424d876",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "6741a384e013faa0530a2ecb",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 14,
+    "text": "2. Xác thực tài khoản • Chọn banner “Cập nhật giấy tờ định danh” Bước 1: Chọn xác thực tài khoản",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "2. Xác thực tài khoản",
+      "chunk_index": 0,
+      "char_count": 96,
+      "strategy": "A"
+    },
+    "id": "6741a384e013faa0530a2ecb",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "df01812c702658e37edcdca0",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 15,
+    "text": "2. Xác thực tài khoản (Điều kiện: Giấy tờ còn hạn, hình gốc, không scan/copy) • Chọn loại giấy tờ tuỳ thân • Chọn “Mặt trước”/”Mặt sau” và chụp ảnh giấy tờ tuỳ thân • Chi tiết hướng dẫn chụp hình vui lòng chọn “Hướng dẫn chụp hình” • Ấn “Tiếp tục” Bước 2: Chụp ảnh giấy tờ tuỳ thân",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "2. Xác thực tài khoản",
+      "chunk_index": 0,
+      "char_count": 281,
+      "strategy": "A"
+    },
+    "id": "df01812c702658e37edcdca0",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "f8f88eebf22a3fd5566516eb",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 16,
+    "text": "2. Xác thực tài khoản • Chọn “Chụp ảnh” và chụp ảnh chân dung của bạn • Chi tiết hướng dẫn chụp hình vui lòng chọn “Hướng dẫn chụp hình” • Ấn “Tiếp tục” Bước 3: Chụp ảnh chân dung",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "2. Xác thực tài khoản",
+      "chunk_index": 0,
+      "char_count": 179,
+      "strategy": "A"
+    },
+    "id": "f8f88eebf22a3fd5566516eb",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "3eb053e94afa0e3eeb405c31",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 17,
+    "text": "2. Xác thực tài khoản • Nhập họ và tên (họ và tên thật, viết cách, có dấu) • Nhập chứng minh nhân dân (9 hoặc 12 chữ số) • Chọn ngày sinh • Chọn giới tính • Chọn quốc tịch • Tick chọn đồng ý với thoả thuận sử dụng của ZaloPay • Ấn “Hoàn tất” Bước 4: Nhập thông tin cá nhân",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "2. Xác thực tài khoản",
+      "chunk_index": 0,
+      "char_count": 272,
+      "strategy": "A"
+    },
+    "id": "3eb053e94afa0e3eeb405c31",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "162e8f7e058047e11dc4334a",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 18,
+    "text": "2. Xác thực tài khoản • Yêu cầu định danh đang chờ duyệt; ZaloPay sẽ thông báo kết quả định danh trong 24 giờ • Ấn “Đóng” Bước 5: Định danh hoàn tất",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "2. Xác thực tài khoản",
+      "chunk_index": 0,
+      "char_count": 148,
+      "strategy": "A"
+    },
+    "id": "162e8f7e058047e11dc4334a",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "479f9fc395be66f5e17f7436",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 19,
+    "text": "3. Liên kết với Agribank Liên kết với Agribank để có thể sử dụng tiền tại Agribank trên ví ZaloPay",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "3. Liên kết với Agribank",
+      "chunk_index": 0,
+      "char_count": 98,
+      "strategy": "A"
+    },
+    "id": "479f9fc395be66f5e17f7436",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "15f48b92fc9023f9d61b68e6",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 20,
+    "text": "3. Liên kết với Agribank • Chọn icon “Liên kết ngân hàng” trên màn hình trang chủ Cách 1: Liên kết bằng thẻ Agribank Bước 1: Chọn liên kết ngân hàng",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "3. Liên kết với Agribank",
+      "chunk_index": 0,
+      "char_count": 148,
+      "strategy": "A"
+    },
+    "id": "15f48b92fc9023f9d61b68e6",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "0c207ca46df785a8a1388e53",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 21,
+    "text": "3. Liên kết với Agribank • Chọn “Thêm liên kết” Cách 1: Liên kết bằng thẻ Agribank Bước 2: Thêm liên kết",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "3. Liên kết với Agribank",
+      "chunk_index": 0,
+      "char_count": 104,
+      "strategy": "A"
+    },
+    "id": "0c207ca46df785a8a1388e53",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "674b246fa98b8ed8b7adaad6",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 22,
+    "text": "3. Liên kết với Agribank • Chọn icon “Agribank” • Hoặc dùng thanh tìm kiếm để tìm Agribank • Điều kiện: • Số điện thoại đăng ký Agribank phải là số đăng ký tài khoản ZaloPay • Đã đăng ký dịch vụ thanh toán trực tuyến (giao dịch Internet). Cách 1: Liên kết bằng thẻ Agribank Bước 3: Chọn ngân hàng liên kết “Agribank”",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "3. Liên kết với Agribank",
+      "chunk_index": 0,
+      "char_count": 316,
+      "strategy": "A"
+    },
+    "id": "674b246fa98b8ed8b7adaad6",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "f30b06583b7bd3daffb7cd6a",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 23,
+    "text": "Cách 1: Liên kết bằng thẻ Agribank 3. Liên kết với Agribank Bước 4: Nhập thông tin thẻ Agribank • Nhập số thẻ ngân hàng (in trên mặt trước thẻ, gồm 16 số) • Nhập thời gian phát hành thẻ (in trên mặt trước thẻ) • Nhập họ và tên chủ thẻ (được in trên mặt trước của thẻ, viết cách, không dấu) • Ấn “Liên kết ngay”",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "3. Liên kết với Agribank",
+      "chunk_index": 0,
+      "char_count": 310,
+      "strategy": "A"
+    },
+    "id": "f30b06583b7bd3daffb7cd6a",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "e712b35cfac670ff52d364fd",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 24,
+    "text": "Cách 1: Liên kết bằng thẻ Agribank 3. Liên kết với Agribank Bước 5: Nhập mã OTP • Nhập mã OTP được gửi về số điện thoại đã đăng ký • Ấn “Liên kết ngay”",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "3. Liên kết với Agribank",
+      "chunk_index": 0,
+      "char_count": 151,
+      "strategy": "A"
+    },
+    "id": "e712b35cfac670ff52d364fd",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "33ba87a824a77cd6a6ccfb71",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 25,
+    "text": "Cách 1: Liên kết bằng thẻ Agribank 3. Liên kết với Agribank Bước 6: Liên kết thành công • Ấn “Đóng”",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "3. Liên kết với Agribank",
+      "chunk_index": 0,
+      "char_count": 99,
+      "strategy": "A"
+    },
+    "id": "33ba87a824a77cd6a6ccfb71",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "2e7059646031e3ebc4f50b8a",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 26,
+    "text": "Cách 2: Liên kết tại quầy Agribank 3. Liên kết với Agribank • Chọn icon “Liên kết ngân hàng” trên màn hình trang chủ Bước 1: Chọn liên kết ngân hàng",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "3. Liên kết với Agribank",
+      "chunk_index": 0,
+      "char_count": 148,
+      "strategy": "A"
+    },
+    "id": "2e7059646031e3ebc4f50b8a",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "9191200775412db1b3769bb4",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 27,
+    "text": "Cách 2: Liên kết tại quầy Agribank 3. Liên kết với Agribank • Chọn “Thêm liên kết” Bước 2: Thêm liên kết",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "3. Liên kết với Agribank",
+      "chunk_index": 0,
+      "char_count": 104,
+      "strategy": "A"
+    },
+    "id": "9191200775412db1b3769bb4",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "2a199bebef6636fcaeae37ca",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 28,
+    "text": "Cách 2: Liên kết tại quầy Agribank 3. Liên kết với Agribank • Chuẩn bị giấy tờ cá nhân gồm 1 trong các giấy tờ sau: • CMND/Hộ chiếu/Căn cước/Thẻ quân nhân đã đăng ký khi mở tài khoản Agribank • Đến chi nhánh/phòng giao dịch Agribank (Tìm tại Danh sách chi nhánh) • Yêu cầu nhân viên Agribank hướng dẫn liên kết • Sau khi liên kết thành công, bạn kiểm tra trên ZaloPay mục “Liên kết ngân hàng” sẽ thấy hiển thị liên kết tài khoản ngân hàng Agribank • Vui lòng xem thêm hướng dẫn bằng cách chọn “Xem hư",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "3. Liên kết với Agribank",
+      "chunk_index": 0,
+      "char_count": 500,
+      "strategy": "A"
+    },
+    "id": "2a199bebef6636fcaeae37ca",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "c629492ff0fb7ec8e0ae5c98",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 28,
+    "text": "Vui lòng xem thêm hướng dẫn bằng cách chọn “Xem hướng dẫn” hoặc liên hệ Tổng đài chăm sóc khách hàng Agribank: 1900558818 Bước 3: Chọn loại liên kết tại quầy",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "3. Liên kết với Agribank",
+      "chunk_index": 1,
+      "char_count": 157,
+      "strategy": "A"
+    },
+    "id": "c629492ff0fb7ec8e0ae5c98",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "eaa1697250d9182ec159c61f",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 29,
+    "text": "4. Huỷ liên kết ngân hàng Bỏ liên kết với ngân hàng đã từng liên kết từ trước",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "4. Huỷ liên kết ngân hàng",
+      "chunk_index": 0,
+      "char_count": 77,
+      "strategy": "A"
+    },
+    "id": "eaa1697250d9182ec159c61f",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "a209f93f5e1affa007548af4",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 30,
+    "text": "4. Huỷ liên kết ngân hàng • Chọn icon “Liên kết ngân hàng” trên màn hình trang chủ Bước 1: Chọn liên kết ngân hàng",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "4. Huỷ liên kết ngân hàng",
+      "chunk_index": 0,
+      "char_count": 114,
+      "strategy": "A"
+    },
+    "id": "a209f93f5e1affa007548af4",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "8e101205481ba5884ff9520e",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 31,
+    "text": "• Chọn icon thẻ/tài khoản của ngân hàng muốn huỷ liên kết trong danh sách ngân hàng đã liên kết Bước 2: Chọn ngân hàng muốn huỷ liên kết 4. Huỷ liên kết ngân hàng",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "4. Huỷ liên kết ngân hàng",
+      "chunk_index": 0,
+      "char_count": 162,
+      "strategy": "A"
+    },
+    "id": "8e101205481ba5884ff9520e",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "37bf3d3b1fe0a17d35f654ea",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 32,
+    "text": "• Chọn “Huỷ liên kết thẻ” Bước 3: Huỷ liên kết 4. Huỷ liên kết ngân hàng",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "4. Huỷ liên kết ngân hàng",
+      "chunk_index": 0,
+      "char_count": 72,
+      "strategy": "A"
+    },
+    "id": "37bf3d3b1fe0a17d35f654ea",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "8e74ea93e59bb01a2da295c0",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 33,
+    "text": "5. Nạp tiền vào ví ZaloPay Nạp tiền từ Agribank vào ví ZaloPay",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "5. Nạp tiền vào ví ZaloPay",
+      "chunk_index": 0,
+      "char_count": 62,
+      "strategy": "A"
+    },
+    "id": "8e74ea93e59bb01a2da295c0",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "525d8341a4ddd794f7d37a71",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 34,
+    "text": "5. Nạp tiền vào ví ZaloPay • Chọn icon “Nạp/Rút tiền” trên trang chủ Bước 1: Chọn nạp tiền • Chọn “Nạp tiền”",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "5. Nạp tiền vào ví ZaloPay",
+      "chunk_index": 0,
+      "char_count": 108,
+      "strategy": "A"
+    },
+    "id": "525d8341a4ddd794f7d37a71",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "09b2e808fd98b3c5884db780",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 35,
+    "text": "• Nhập số tiền cần nạp, hoặc chọn nhanh số tiền cần nạp đã gợi ý • Hạn mức nạp tối thiểu: 10.000đ/giao dịch • Hạn mức nạp tối đa: 5.000.000đ/giao dịch • Ấn “Tiếp tục” Bước 2: Nhập thông tin nạp tiền 5. Nạp tiền vào ví ZaloPay",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "5. Nạp tiền vào ví ZaloPay",
+      "chunk_index": 0,
+      "char_count": 225,
+      "strategy": "A"
+    },
+    "id": "09b2e808fd98b3c5884db780",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "960f1a02266bd60e293527a2",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 36,
+    "text": "Bước 3: Chọn nguồn tiền Agribank 5. Nạp tiền vào ví ZaloPay • Ấn “Thay đổi” nếu chưa thấy nguồn tiền là Agribank • Chọn nguồn tiền Agribank và ấn “x”",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "5. Nạp tiền vào ví ZaloPay",
+      "chunk_index": 0,
+      "char_count": 149,
+      "strategy": "A"
+    },
+    "id": "960f1a02266bd60e293527a2",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "3dbc7973e02ce442cdd53949",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 37,
+    "text": "• Ấn “Xác nhận giao dịch” Bước 4: Xác nhận giao dịch nạp tiền • Nhập mật khẩu để xác nhận thanh toán 5. Nạp tiền vào ví ZaloPay",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "5. Nạp tiền vào ví ZaloPay",
+      "chunk_index": 0,
+      "char_count": 127,
+      "strategy": "A"
+    },
+    "id": "3dbc7973e02ce442cdd53949",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "b8de14311e9b5274fd23058e",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 38,
+    "text": "• Nhập mã OTP là dãy số được gửi tới số điện thoại bạn đã đăng ký (chỉ áp dụng với giao dịch nạp tiền lớn hơn 500.000đ, giao dịch nhỏ hơn vui lòng bỏ qua bước này) Bước 5: Xác minh OTP (chỉ áp dụng cho giao dịch với số tiền lớn hơn 500.000đ) 5. Nạp tiền vào ví ZaloPay",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "5. Nạp tiền vào ví ZaloPay",
+      "chunk_index": 0,
+      "char_count": 268,
+      "strategy": "A"
+    },
+    "id": "b8de14311e9b5274fd23058e",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "8fa20ca15e82b0459fc3137f",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 39,
+    "text": "• Ấn “Hoàn thành” Bước 6: Nạp tiền thành công 5. Nạp tiền vào ví ZaloPay",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "5. Nạp tiền vào ví ZaloPay",
+      "chunk_index": 0,
+      "char_count": 72,
+      "strategy": "A"
+    },
+    "id": "8fa20ca15e82b0459fc3137f",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "87fe459b822e9ebb8f5d46dc",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 40,
+    "text": "6. Rút tiền về Agribank Rút tiền đã nạp vào ví ZaloPay trở về ngân hàng Agribank",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "6. Rút tiền về Agribank",
+      "chunk_index": 0,
+      "char_count": 80,
+      "strategy": "A"
+    },
+    "id": "87fe459b822e9ebb8f5d46dc",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "60716f0e29040ba8f7581b30",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 41,
+    "text": "6. Rút tiền về Agribank • Chọn icon “Nạp/Rút tiền” trên trang chủ Bước 1: Chọn rút tiền • Chọn “Rút tiền”",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "6. Rút tiền về Agribank",
+      "chunk_index": 0,
+      "char_count": 105,
+      "strategy": "A"
+    },
+    "id": "60716f0e29040ba8f7581b30",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "09a1e3ef05df52fdad098e8b",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 42,
+    "text": "• Chọn ngân hàng liên kết cần rút tiền về (Agribank) • Chọn hoặc nhập số tiền muốn rút • Hạn mức rút tối thiểu: 50.000đ/giao dịch • Hạn mức rút tối đa: 5.000.000/giao dịch • Ấn “Tiếp Tục” Bước 2: Nhập thông tin rút tiền 6. Rút tiền về Agribank",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "6. Rút tiền về Agribank",
+      "chunk_index": 0,
+      "char_count": 243,
+      "strategy": "A"
+    },
+    "id": "09a1e3ef05df52fdad098e8b",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "d7caf519fd6cf843550edd69",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 43,
+    "text": "6. Rút tiền về Agribank Bước 3: Chọn nguồn tiền Agribank • Chọn nguồn tiền Agribank tại Ngân hàng liên kết",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "6. Rút tiền về Agribank",
+      "chunk_index": 0,
+      "char_count": 106,
+      "strategy": "A"
+    },
+    "id": "d7caf519fd6cf843550edd69",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "b6b512da54a19af83a605f6b",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 44,
+    "text": "• Ấn “Xác nhận giao dịch” Bước 4: Xác nhận giao dịch rút tiền • Nhập mật khẩu để xác nhận thanh toán 6. Rút tiền về Agribank",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "6. Rút tiền về Agribank",
+      "chunk_index": 0,
+      "char_count": 124,
+      "strategy": "A"
+    },
+    "id": "b6b512da54a19af83a605f6b",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "5d028aa9ef53832462685b67",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 45,
+    "text": "• Ấn “Hoàn thành” Bước 5: Rút tiền thành công 6. Rút tiền về Agribank",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "6. Rút tiền về Agribank",
+      "chunk_index": 0,
+      "char_count": 69,
+      "strategy": "A"
+    },
+    "id": "5d028aa9ef53832462685b67",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "10ae945fb0575b80454213d3",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 46,
+    "text": "7. Thanh toán qua ví ZaloPay Thanh toán các sản phẩm/dịch vụ bằng ví ZaloPay",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "7. Thanh toán qua ví ZaloPay",
+      "chunk_index": 0,
+      "char_count": 76,
+      "strategy": "A"
+    },
+    "id": "10ae945fb0575b80454213d3",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "032f0dc7872c760421824d2c",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 47,
+    "text": "7. Thanh toán qua ví ZaloPay • Chọn icon của dịch vụ muốn thanh toán trên màn hình trang chủ Phương thức thanh toán 1: Thanh toán dịch vụ có sẵn trên ZaloPay Bước 1: Chọn dịch vụ thanh toán",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "7. Thanh toán qua ví ZaloPay",
+      "chunk_index": 0,
+      "char_count": 189,
+      "strategy": "A"
+    },
+    "id": "032f0dc7872c760421824d2c",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "5244c04266dd039fd58655b4",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 48,
+    "text": "• Chọn loại dịch vụ muốn thanh toán • Hạn mức thanh toán tối thiểu: 10.000đ/giao dịch • Hạn mức thanh toán tối đa: 5.000.000đ/giao dịch • Ấn “Mua ngay/Xác nhận” Phương thức thanh toán 1: Thanh toán dịch vụ có sẵn trên ZaloPay Bước 2: Thao tác tạo đơn hàng 7. Thanh toán qua ví ZaloPay",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "7. Thanh toán qua ví ZaloPay",
+      "chunk_index": 0,
+      "char_count": 284,
+      "strategy": "A"
+    },
+    "id": "5244c04266dd039fd58655b4",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "4f2ad78b77833f1d637c0a5a",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 49,
+    "text": "Phương thức thanh toán 1: Thanh toán dịch vụ có sẵn trên ZaloPay 7. Thanh toán qua ví ZaloPay Bước 3: Chọn nguồn tiền Agribank • Ấn “Thay đổi” nếu chưa thấy nguồn tiền là Agribank • Chọn nguồn tiền Agribank và ấn “x”",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "7. Thanh toán qua ví ZaloPay",
+      "chunk_index": 0,
+      "char_count": 216,
+      "strategy": "A"
+    },
+    "id": "4f2ad78b77833f1d637c0a5a",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "cfce67f52335d339de656f72",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 50,
+    "text": "• Chọn “Xác nhận giao dịch” Phương thức thanh toán 1: Thanh toán dịch vụ có sẵn trên ZaloPay Bước 4: Xác nhận giao dịch thanh toán • Nhập mật khẩu thanh toán 7. Thanh toán qua ví ZaloPay",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "7. Thanh toán qua ví ZaloPay",
+      "chunk_index": 0,
+      "char_count": 186,
+      "strategy": "A"
+    },
+    "id": "cfce67f52335d339de656f72",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "c7eb93713edf754064be3487",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 51,
+    "text": "Phương thức thanh toán 1: Thanh toán dịch vụ có sẵn trên ZaloPay Bước 5: Xác minh OTP (chỉ áp dụng cho giao dịch với số tiền lớn hơn 500.000đ) 7. Thanh toán qua ví ZaloPay • Nhập mã OTP là dãy số được gửi tới số điện thoại bạn đã đăng ký (chỉ áp dụng với giao dịch thanh toán lớn hơn 500.000đ, giao dịch nhỏ hơn vui lòng bỏ qua bước này)",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "7. Thanh toán qua ví ZaloPay",
+      "chunk_index": 0,
+      "char_count": 337,
+      "strategy": "A"
+    },
+    "id": "c7eb93713edf754064be3487",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "650eb027fa6361293e669d99",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 52,
+    "text": "• Ấn “Đóng” để kết thúc thanh toán, hoặc “Mua ___mới” để tiếp tục thực hiện thanh toán khác Phương thức thanh toán 1: Thanh toán dịch vụ có sẵn trên ZaloPay Bước 6: Thanh toán thành công 7. Thanh toán qua ví ZaloPay",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "7. Thanh toán qua ví ZaloPay",
+      "chunk_index": 0,
+      "char_count": 215,
+      "strategy": "A"
+    },
+    "id": "650eb027fa6361293e669d99",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "e3c2c3b340563760c4587d1e",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 53,
+    "text": "Tuỳ từng địa điểm thanh toán, bạn có thể thanh toán bằng 1 trong 2 cách: Quét mã QR hoặc sử dụng Mã thanh toán Phương thức thanh toán 2: Thanh toán sản phẩm/dịch vụ bên ngoài • Chọn icon “Quét mã QR” Cách 1: Quét mã QR code Bước 1: Chọn thanh toán bằng quét mã 7. Thanh toán qua ví ZaloPay",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "7. Thanh toán qua ví ZaloPay",
+      "chunk_index": 0,
+      "char_count": 289,
+      "strategy": "A"
+    },
+    "id": "e3c2c3b340563760c4587d1e",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "e103aa9dfdc77ccf64296047",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 54,
+    "text": "Phương thức thanh toán 2: Thanh toán sản phẩm/dịch vụ bên ngoài • Hướng khung camera điện thoại vào mã QR tại địa điểm thanh toán, hoặc sử dụng hình ảnh có sẵn Cách 1: Quét mã QR code Bước 2: Quét mã 7. Thanh toán qua ví ZaloPay",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "7. Thanh toán qua ví ZaloPay",
+      "chunk_index": 0,
+      "char_count": 228,
+      "strategy": "A"
+    },
+    "id": "e103aa9dfdc77ccf64296047",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "983758829b1c1f5df823c1e8",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 55,
+    "text": "Phương thức thanh toán 2: Thanh toán sản phẩm/dịch vụ bên ngoài Cách 1: Quét mã QR code 7. Thanh toán qua ví ZaloPay Bước 3: Chọn nguồn tiền Agribank • Ấn “Thay đổi” nếu chưa thấy nguồn tiền là Agribank • Chọn nguồn tiền Agribank và ấn “x”",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "7. Thanh toán qua ví ZaloPay",
+      "chunk_index": 0,
+      "char_count": 239,
+      "strategy": "A"
+    },
+    "id": "983758829b1c1f5df823c1e8",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "3ca44046235ca973e400fad9",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 56,
+    "text": "Phương thức thanh toán 2: Thanh toán sản phẩm/dịch vụ bên ngoài • Chọn “Xác nhận giao dịch” Cách 1: Quét mã QR code Bước 4: Xác nhận giao dịch 7. Thanh toán qua ví ZaloPay • Nhập mật khẩu xác nhận",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "7. Thanh toán qua ví ZaloPay",
+      "chunk_index": 0,
+      "char_count": 196,
+      "strategy": "A"
+    },
+    "id": "3ca44046235ca973e400fad9",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "7d73420feaeeb28ce84687e8",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 57,
+    "text": "Phương thức thanh toán 2: Thanh toán sản phẩm/dịch vụ bên ngoài Cách 1: Quét mã QR code Bước 5: Xác minh OTP (chỉ áp dụng cho giao dịch với số tiền lớn hơn 500.000đ) 7. Thanh toán qua ví ZaloPay • Nhập mã OTP là dãy số được gửi tới số điện thoại bạn đã đăng ký (chỉ áp dụng với giao dịch thanh toán lớn hơn 500.000đ, giao dịch nhỏ hơn vui lòng bỏ qua bước này)",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "7. Thanh toán qua ví ZaloPay",
+      "chunk_index": 0,
+      "char_count": 360,
+      "strategy": "A"
+    },
+    "id": "7d73420feaeeb28ce84687e8",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "da90f48073493e5fff6f8001",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 58,
+    "text": "Phương thức thanh toán 2: Thanh toán sản phẩm/dịch vụ bên ngoài Cách 1: Quét mã QR code Bước 6: Thanh toán thành công 7. Thanh toán qua ví ZaloPay • Chọn “Hoàn thành”",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "7. Thanh toán qua ví ZaloPay",
+      "chunk_index": 0,
+      "char_count": 166,
+      "strategy": "A"
+    },
+    "id": "da90f48073493e5fff6f8001",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "107155cf4d5f40c75dcc77b5",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 59,
+    "text": "Phương thức thanh toán 2: Thanh toán sản phẩm/dịch vụ bên ngoài • Chọn icon “Mã thanh toán” Cách 2: Dùng mã thanh toán Bước 1: Chọn thanh toán bằng mã 7. Thanh toán qua ví ZaloPay",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "7. Thanh toán qua ví ZaloPay",
+      "chunk_index": 0,
+      "char_count": 179,
+      "strategy": "A"
+    },
+    "id": "107155cf4d5f40c75dcc77b5",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "920a0e6b4b6a81228e366cca",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 60,
+    "text": "Phương thức thanh toán 2: Thanh toán sản phẩm/dịch vụ bên ngoài • Nhập mật khẩu xác nhận Cách 2: Dùng mã thanh toán Bước 2: Xác nhận mật khẩu 7. Thanh toán qua ví ZaloPay",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "7. Thanh toán qua ví ZaloPay",
+      "chunk_index": 0,
+      "char_count": 170,
+      "strategy": "A"
+    },
+    "id": "920a0e6b4b6a81228e366cca",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "e3e2ea79fcaa8193ed39218f",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 61,
+    "text": "Phương thức thanh toán 2: Thanh toán sản phẩm/dịch vụ bên ngoài • Đưa mã cho thu ngân điạ điểm thanh toán để thanh toán Cách 2: Dùng mã thanh toán Bước 3: Cung cấp mã 7. Thanh toán qua ví ZaloPay",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "7. Thanh toán qua ví ZaloPay",
+      "chunk_index": 0,
+      "char_count": 195,
+      "strategy": "A"
+    },
+    "id": "e3e2ea79fcaa8193ed39218f",
+    "source_id": "agribank_zalopay_guide"
+  },
+  {
+    "chunk_id": "6b0e7850a0503d0c8a4bebfa",
+    "document_id": "agribank_zalopay_guide",
+    "source": "starter/data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "page": 62,
+    "text": "7. Thanh toán qua ví ZaloPay • Chọn “Hoàn thành” Phương thức thanh toán 2: Thanh toán sản phẩm/dịch vụ bên ngoài Cách 2: Dùng mã thanh toán Bước 4: Thanh toán thành công",
+    "metadata": {
+      "extraction_status": "ok",
+      "section": "7. Thanh toán qua ví ZaloPay",
+      "chunk_index": 0,
+      "char_count": 169,
+      "strategy": "A"
+    },
+    "id": "6b0e7850a0503d0c8a4bebfa",
+    "source_id": "agribank_zalopay_guide"
+  }
+]

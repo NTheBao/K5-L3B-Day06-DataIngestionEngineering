@@ -1,0 +1,142 @@
+[
+  {
+    "id": "D01",
+    "split": "dev",
+    "question": "Khi đăng nhập ZaloPay bằng số điện thoại, cần có tài khoản nào và sau khi nhập số thì làm gì?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "D02",
+    "split": "dev",
+    "question": "Mã OTP đăng nhập bằng số điện thoại được gửi tới đâu?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "D03",
+    "split": "dev",
+    "question": "Ở bước tạo mật khẩu ZaloPay, người đã đăng ký ZaloPay từ trước cần làm gì và có thể bỏ qua những bước tiếp theo nào?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "D04",
+    "split": "dev",
+    "question": "Nếu chọn đăng nhập Zalo để tạo tài khoản ZaloPay thì có thể xác thực bằng những cách nào; người chưa có tài khoản Zalo xử lý ra sao?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "D05",
+    "split": "dev",
+    "question": "Chỉ xét mục “2. Xác thực tài khoản”: ảnh giấy tờ tùy thân dùng để xác thực phải đáp ứng những điều kiện nào?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "D06",
+    "split": "dev",
+    "question": "Khi nhập thông tin cá nhân để định danh, người dùng cần cung cấp những trường thông tin nào?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "D07",
+    "split": "dev",
+    "question": "Sau khi hoàn tất định danh, khi nào người dùng được thông báo kết quả?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "D08",
+    "split": "dev",
+    "question": "Chỉ xét mục “3. Liên kết với Agribank”: điều kiện về số điện thoại và dịch vụ nào phải thỏa mãn để liên kết bằng thẻ?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "D09",
+    "split": "dev",
+    "question": "Trong mục “3. Liên kết với Agribank”, nhập thông tin nào khi liên kết bằng thẻ Agribank?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "D10",
+    "split": "dev",
+    "question": "Nếu liên kết Agribank tại quầy, cần mang giấy tờ gì và thực hiện ở đâu?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "D11",
+    "split": "dev",
+    "question": "Trong mục “5. Nạp tiền vào ví ZaloPay”, hạn mức nạp tối thiểu và tối đa cho mỗi giao dịch là bao nhiêu?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "D12",
+    "split": "dev",
+    "question": "Nếu Agribank chưa hiện là nguồn tiền khi nạp ví, thao tác nào được hướng dẫn?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "D13",
+    "split": "dev",
+    "question": "Chỉ tra cứu mục “5. Nạp tiền vào ví ZaloPay”: ngưỡng nào làm phát sinh bước xác minh OTP, và giao dịch thấp hơn xử lý thế nào?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "D14",
+    "split": "dev",
+    "question": "Trong mục “6. Rút tiền về Agribank”, mức rút tối thiểu và tối đa cho mỗi giao dịch là bao nhiêu?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "D15",
+    "split": "dev",
+    "question": "Ở bước xác nhận giao dịch rút tiền, người dùng phải làm gì?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "T16",
+    "split": "test",
+    "question": "Ở bước hủy liên kết ngân hàng, người dùng chọn thao tác nào?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "T17",
+    "split": "test",
+    "question": "Với sản phẩm hoặc dịch vụ thanh toán bên ngoài, tài liệu nêu những lựa chọn thanh toán nào tùy địa điểm?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "T18",
+    "split": "test",
+    "question": "Khi quét QR tại điểm thanh toán, camera cần hướng vào đâu và có thể dùng nguồn ảnh nào khác?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "T19",
+    "split": "test",
+    "question": "Chỉ tra cứu mục “7. Thanh toán qua ví ZaloPay”: khi thanh toán bên ngoài bằng QR, giao dịch nào cần OTP và giao dịch thấp hơn xử lý ra sao?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "T20",
+    "split": "test",
+    "question": "Khi rút tiền, cần chọn nguồn tiền Agribank ở đâu?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  }
+]

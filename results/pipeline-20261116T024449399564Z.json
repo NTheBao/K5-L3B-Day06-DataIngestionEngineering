@@ -1,0 +1,447 @@
+{
+  "run_id": "20261116T024449399564Z",
+  "completed_at_utc": "2026-11-16T02:45:01.777621+00:00",
+  "source": {
+    "document_id": "agribank_zalopay_guide",
+    "title": "Tài liệu hướng dẫn sử dụng ZaloPay (App)",
+    "path": "data/HUONG+DAN+LIEN+KET+THE+AGRIBANK+VOI+ZALOPAY.pdf",
+    "sha256": "d9dedb661d5d0ca76153b02d9eae16498ff7d12230c0ed68b50415b2148b2e90",
+    "physical_pages": 62,
+    "content_pages": 60,
+    "source_characters": 10794,
+    "ocr_used": false,
+    "rights_status": "Not verified; confirm permission before redistribution."
+  },
+  "normalization": "Unicode NFKC; whitespace normalized while line and blank-line structure is retained.",
+  "metadata": {
+    "required_fields": [
+      "document_id",
+      "source",
+      "page"
+    ],
+    "filter_field": "section",
+    "filter_field_type": "string",
+    "section_values_detected": {
+      "1. Đăng ký/Đăng nhập": 10,
+      "2. Xác thực tài khoản": 6,
+      "3. Liên kết với Agribank": 10,
+      "4. Huỷ liên kết ngân hàng": 4,
+      "5. Nạp tiền vào ví ZaloPay": 7,
+      "6. Rút tiền về Agribank": 6,
+      "7. Thanh toán qua ví ZaloPay": 17
+    },
+    "filter_values_in_benchmark": [
+      "2. Xác thực tài khoản",
+      "3. Liên kết với Agribank",
+      "5. Nạp tiền vào ví ZaloPay",
+      "6. Rút tiền về Agribank",
+      "7. Thanh toán qua ví ZaloPay"
+    ],
+    "section_value_source": "Section headings extracted from this PDF."
+  },
+  "benchmark": {
+    "path": "../benchmark/benchmark.json",
+    "sha256": "9338ebbee7867009d60bcf926ccbade9e35caffc8b9ee0ae48df8f3c232510b2",
+    "question_counts": {
+      "dev": 15,
+      "test": 5
+    },
+    "filtered_question_count": 7,
+    "question_ids_by_split": {
+      "dev": [
+        "D01",
+        "D02",
+        "D03",
+        "D04",
+        "D05",
+        "D06",
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11",
+        "D12",
+        "D13",
+        "D14",
+        "D15"
+      ],
+      "test": [
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ]
+    }
+  },
+  "embedding": {
+    "provider": "Sentence Transformers (local)",
+    "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "package_version": "6.3.0",
+    "dimensions": 384,
+    "device": "cpu",
+    "normalize_embeddings": true,
+    "document_query_processing": "Same encode method and model; no query/document prefix.",
+    "initialization_seconds": 6.1791
+  },
+  "vector_store": {
+    "provider": "Chroma",
+    "version": "1.5.9",
+    "path": "data\\chroma",
+    "collection": "day06_local_embeddings",
+    "initialization": "chromadb.PersistentClient with get_or_create_collection",
+    "metric": "cosine",
+    "search": "Approximate nearest-neighbor using Chroma HNSW."
+  },
+  "strategies": {
+    "A": {
+      "chunk_count": 61,
+      "chunk_characters_with_overlap": 10844,
+      "chunk_tokens_with_overlap": 3158,
+      "token_count_definition": "SentenceTransformer attention-mask token count, including special tokens.",
+      "chunk_length_chars": {
+        "min": 62,
+        "mean": 177.77,
+        "max": 500
+      },
+      "index_strategy": "A",
+      "existing_strategy_chunks_before": 61,
+      "indexed_strategy_chunks_after": 61,
+      "reingestion_has_no_duplicates": true,
+      "embedding_seconds": 2.3702,
+      "storage_seconds": 0.2935,
+      "cost_usd": 0.0,
+      "chunking": "fixed_size",
+      "chunk_size_chars": 500,
+      "overlap_chars": 50,
+      "chunking_seconds": 0.0004
+    },
+    "B": {
+      "chunk_count": 66,
+      "chunk_characters_with_overlap": 10788,
+      "chunk_tokens_with_overlap": 3168,
+      "token_count_definition": "SentenceTransformer attention-mask token count, including special tokens.",
+      "chunk_length_chars": {
+        "min": 20,
+        "mean": 163.45,
+        "max": 289
+      },
+      "index_strategy": "B",
+      "existing_strategy_chunks_before": 66,
+      "indexed_strategy_chunks_after": 66,
+      "reingestion_has_no_duplicates": true,
+      "embedding_seconds": 1.4373,
+      "storage_seconds": 0.094,
+      "cost_usd": 0.0,
+      "chunking": "logical_paragraph_and_step_blocks",
+      "max_chunk_size_chars": 300,
+      "chunking_seconds": 0.0008
+    },
+    "C": {
+      "chunk_count": 66,
+      "chunk_characters_with_overlap": 10788,
+      "chunk_tokens_with_overlap": 3168,
+      "token_count_definition": "SentenceTransformer attention-mask token count, including special tokens.",
+      "chunk_length_chars": {
+        "min": 20,
+        "mean": 163.45,
+        "max": 289
+      },
+      "chunking": "logical_paragraph_and_step_blocks",
+      "max_chunk_size_chars": 300,
+      "chunking_seconds": 0.0008,
+      "index_strategy": "B (shared; identical chunks and vectors)",
+      "shares_index_with": "B",
+      "filter": "Apply the user's supplied section filter before retrieval; otherwise unfiltered.",
+      "additional_embedding_seconds": 0.0,
+      "additional_storage_seconds": 0.0,
+      "cost_usd": 0.0
+    }
+  },
+  "retrieval": {
+    "top_k": 3,
+    "query_embedding_seconds": 0.4302,
+    "search_seconds_by_strategy": {
+      "A": 0.1327,
+      "B": 0.1151,
+      "C": 0.1136
+    },
+    "summary": {
+      "A": {
+        "dev": {
+          "question_count": 15,
+          "hit_at_1": {
+            "hits": 8,
+            "total": 15,
+            "rate": 0.5333333333333333
+          },
+          "evidence_hit_at_3": {
+            "hits": 11,
+            "total": 15,
+            "rate": 0.7333333333333333
+          },
+          "exact_evidence_miss_ids": [
+            "D04",
+            "D08",
+            "D12",
+            "D13"
+          ]
+        },
+        "test": {
+          "question_count": 5,
+          "hit_at_1": {
+            "hits": 3,
+            "total": 5,
+            "rate": 0.6
+          },
+          "evidence_hit_at_3": {
+            "hits": 5,
+            "total": 5,
+            "rate": 1.0
+          },
+          "exact_evidence_miss_ids": []
+        }
+      },
+      "B": {
+        "dev": {
+          "question_count": 15,
+          "hit_at_1": {
+            "hits": 8,
+            "total": 15,
+            "rate": 0.5333333333333333
+          },
+          "evidence_hit_at_3": {
+            "hits": 8,
+            "total": 15,
+            "rate": 0.5333333333333333
+          },
+          "exact_evidence_miss_ids": [
+            "D02",
+            "D04",
+            "D08",
+            "D09",
+            "D10",
+            "D12",
+            "D13"
+          ]
+        },
+        "test": {
+          "question_count": 5,
+          "hit_at_1": {
+            "hits": 2,
+            "total": 5,
+            "rate": 0.4
+          },
+          "evidence_hit_at_3": {
+            "hits": 4,
+            "total": 5,
+            "rate": 0.8
+          },
+          "exact_evidence_miss_ids": [
+            "T19"
+          ]
+        }
+      },
+      "C": {
+        "dev": {
+          "question_count": 15,
+          "hit_at_1": {
+            "hits": 8,
+            "total": 15,
+            "rate": 0.5333333333333333
+          },
+          "evidence_hit_at_3": {
+            "hits": 9,
+            "total": 15,
+            "rate": 0.6
+          },
+          "exact_evidence_miss_ids": [
+            "D02",
+            "D04",
+            "D08",
+            "D09",
+            "D10",
+            "D12"
+          ]
+        },
+        "test": {
+          "question_count": 5,
+          "hit_at_1": {
+            "hits": 2,
+            "total": 5,
+            "rate": 0.4
+          },
+          "evidence_hit_at_3": {
+            "hits": 4,
+            "total": 5,
+            "rate": 0.8
+          },
+          "exact_evidence_miss_ids": [
+            "T19"
+          ]
+        }
+      }
+    },
+    "trace_path": "../results/traces-20261116T024449399564Z.json",
+    "manual_review_path": "../results/manual-review-20261116T024449399564Z.json"
+  },
+  "metadata_audit": {
+    "A": {
+      "top3_metadata": {
+        "correct_records": 15,
+        "total_records": 15,
+        "errors": []
+      },
+      "test_filter_compliance": {
+        "applicable": false,
+        "compliant_questions": null,
+        "total_filtered_test_questions": 0,
+        "failure_ids": [],
+        "rate": null
+      }
+    },
+    "B": {
+      "top3_metadata": {
+        "correct_records": 15,
+        "total_records": 15,
+        "errors": []
+      },
+      "test_filter_compliance": {
+        "applicable": false,
+        "compliant_questions": null,
+        "total_filtered_test_questions": 0,
+        "failure_ids": [],
+        "rate": null
+      }
+    },
+    "C": {
+      "top3_metadata": {
+        "correct_records": 15,
+        "total_records": 15,
+        "errors": []
+      },
+      "test_filter_compliance": {
+        "applicable": true,
+        "compliant_questions": 1,
+        "total_filtered_test_questions": 1,
+        "failure_ids": [],
+        "rate": 1.0
+      }
+    },
+    "interpretation": {
+      "useful_field": "`section` supports a user-supplied scope restriction; `source` and `page` make results traceable.",
+      "limitation": "A single PDF and seven sections limit filter diversity; section labels depend on extracted headings."
+    }
+  },
+  "manual_review_status": "pending_author_review",
+  "coherence_sample_pages": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "strategy_impact": {
+    "selection_policy": "Choose a strategy using dev Evidence Hit@3 first, then dev Hit@1, then lower index-build time. Use test results only for the final report; do not tune on them.",
+    "selected_on_dev_only": "A",
+    "test_used_for_selection": false,
+    "comparisons": {
+      "A_vs_B": {
+        "split_metric_deltas": {
+          "dev": {
+            "evidence_hit_at_3_delta_hits": -3,
+            "hit_at_1_delta_hits": 0
+          },
+          "test": {
+            "evidence_hit_at_3_delta_hits": -1,
+            "hit_at_1_delta_hits": -1
+          }
+        },
+        "left_chunk_count": 61,
+        "right_chunk_count": 66,
+        "left_index_build_seconds": 2.6641,
+        "right_index_build_seconds": 1.5321,
+        "left_query_search_seconds": 0.1327,
+        "right_query_search_seconds": 0.1151,
+        "right_shares_left_index": false
+      },
+      "B_vs_C": {
+        "split_metric_deltas": {
+          "dev": {
+            "evidence_hit_at_3_delta_hits": 1,
+            "hit_at_1_delta_hits": 0
+          },
+          "test": {
+            "evidence_hit_at_3_delta_hits": 0,
+            "hit_at_1_delta_hits": 0
+          }
+        },
+        "left_chunk_count": 66,
+        "right_chunk_count": 66,
+        "left_index_build_seconds": 1.5321,
+        "right_index_build_seconds": 1.5321,
+        "left_query_search_seconds": 0.1151,
+        "right_query_search_seconds": 0.1136,
+        "right_shares_left_index": true
+      }
+    },
+    "exact_evidence_misses": {
+      "A": {
+        "dev": [
+          "D04",
+          "D08",
+          "D12",
+          "D13"
+        ],
+        "test": []
+      },
+      "B": {
+        "dev": [
+          "D02",
+          "D04",
+          "D08",
+          "D09",
+          "D10",
+          "D12",
+          "D13"
+        ],
+        "test": [
+          "T19"
+        ]
+      },
+      "C": {
+        "dev": [
+          "D02",
+          "D04",
+          "D08",
+          "D09",
+          "D10",
+          "D12"
+        ],
+        "test": [
+          "T19"
+        ]
+      }
+    }
+  },
+  "execution": {
+    "command": "python -m src.run",
+    "python_version": "3.11.9",
+    "arguments": []
+  },
+  "chunking_seconds_total": 0.0012,
+  "page_diagnostics": {
+    "pages_without_text": [],
+    "text_pages_without_detected_section": [
+      1,
+      2
+    ]
+  },
+  "total_run_seconds": 12.3959,
+  "cost_usd": 0.0
+}
